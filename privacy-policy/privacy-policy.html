@@ -1,710 +1,2725 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algoramming Privacy Policy</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2em;
+        color: #5dc095;
+      }
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 34px;
+      }
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #5dc095;
+      }
+      input:checked + .slider:before {
+        transform: translateX(66px);
+      }
+      .slider:after {
+        content: "English";
+        color: white;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        font-size: 14px;
+      }
+      input:checked + .slider:after {
+        content: "Bangla";
+        left: 10px;
+        right: auto;
+      }
+      .content {
+        display: none;
+      }
+      .content.active {
+        display: block;
+      }
+      h2,
+      h3 {
+        color: #5dc095;
+      }
+      a {
+        color: #5dc095;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      @media (max-width: 600px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .language-toggle {
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-            margin-bottom: 30px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
         .toggle-switch {
-            display: inline-flex;
-            align-items: center;
-            background: #e9ecef;
-            border-radius: 25px;
-            padding: 4px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
+          margin-top: 10px;
         }
-
-        .toggle-option {
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .toggle-option.active {
-            background: #5DC095;
-            color: white;
-            box-shadow: 0 2px 5px rgba(93, 192, 149, 0.3);
-        }
-
-        .toggle-option:not(.active) {
-            color: #666;
-        }
-
-        .content {
-            display: none;
-        }
-
-        .content.active {
-            display: block;
-        }
-
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-            border-bottom: 3px solid #5DC095;
-            padding-bottom: 15px;
-        }
-
-        h2 {
-            color: #34495e;
-            font-size: 1.8em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-left: 4px solid #5DC095;
-            padding-left: 15px;
-        }
-
-        h3 {
-            color: #5DC095;
-            font-size: 1.4em;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        h4 {
-            color: #666;
-            font-size: 1.2em;
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        a {
-            color: #5DC095;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .highlight {
-            background-color: #e8f5e8;
-            padding: 15px;
-            border-left: 4px solid #5DC095;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #5DC095;
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        .contact-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 1px solid #e9ecef;
-        }
-
-        .last-updated {
-            color: #666;
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            .toggle-option {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <script>
-        function switchLanguage(lang) {
-          // Get both content divs
-          const enContent = document.getElementById('en-content');
-          const bnContent = document.getElementById('bn-content');
-      
-          // Get all toggle option elements
-          const toggleOptions = document.querySelectorAll('.toggle-option');
-      
-          if (lang === 'en') {
-            enContent.classList.add('active');
-            bnContent.classList.remove('active');
-          } else if (lang === 'bn') {
-            bnContent.classList.add('active');
-            enContent.classList.remove('active');
-          }
-      
-          // Update toggle button active state
-          toggleOptions.forEach(option => {
-            if (option.textContent.trim() === (lang === 'en' ? 'English' : 'বাংলা')) {
-              option.classList.add('active');
-            } else {
-              option.classList.remove('active');
-            }
-          });
-        }
-      </script>
-      
-    
+  </head>
+  <body>
     <div class="container">
-        <div class="language-toggle">
-            <div class="toggle-switch">
-                <div class="toggle-option active" onclick="switchLanguage('en')">English</div>
-                <div class="toggle-option" onclick="switchLanguage('bn')">বাংলা</div>
-            </div>
-        </div>
+      <div class="header">
+        <h1>Privacy Policy</h1>
+        <label class="toggle-switch">
+          <input type="checkbox" id="languageToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
 
-        <!-- English Content -->
-        <div id="en-content" class="content active">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated"><strong>Last updated June 01, 2021</strong></p>
-          
-            <p>
-              This Privacy Notice for Algoramming ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might access, collect, store, use, and/or share ("<strong>process</strong>") your personal information when you use our services ("<strong>Services</strong>"), including when you:
-            </p>
-          
+      <!-- English Content -->
+      <div id="englishContent" class="content active">
+        <p><strong>Last updated June 01, 2021</strong></p>
+        <p>
+          This Privacy Notice for Algoramming ("<strong>we</strong>,"
+          "<strong>us</strong>," or "<strong>our</strong>"), describes how and
+          why we might access, collect, store, use, and/or share
+          ("<strong>process</strong>") your personal information when you use
+          our services ("<strong>Services</strong>"), including when you:
+        </p>
+        <ul>
+          <li>
+            Visit our website at
+            <a href="https://www.algoramming.com">https://www.algoramming.com</a
+            >, or any website of ours that links to this Privacy Notice
+          </li>
+          <li>
+            Download and use our mobile application (Algoramming), or any other
+            application of ours that links to this Privacy Notice
+          </li>
+          <li>
+            Use Algoramming. We craft high-performance software solutions that
+            drive business success. Since 2019, our team of 120+ experts has
+            been delivering top-tier mobile and web apps, ERP/CRM systems, SaaS
+            platforms, and business automation. We blend creativity with
+            technology to build intuitive, scalable, and seamless solutions
+            tailored to your needs. Let’s discuss your vision, goals, and how we
+            can collaborate to bring them to life—100% satisfaction guaranteed,
+            or it’s free! Reach out now and let’s create something amazing
+            together!
+          </li>
+          <li>
+            Engage with us in other related ways, including any sales,
+            marketing, or events
+          </li>
+        </ul>
+        <h2>Questions or concerns?</h2>
+        <p>
+          Reading this Privacy Notice will help you understand your privacy
+          rights and choices. We are responsible for making decisions about how
+          your personal information is processed. If you do not agree with our
+          policies and practices, please do not use our Services. If you still
+          have any questions or concerns, please contact us at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
+        </p>
+        <h2>Summary of Key Points</h2>
+        <p>
+          <em
+            >This summary provides key points from our Privacy Notice, but you
+            can find out more details about any of these topics by clicking the
+            link following each key point or by using our table of contents
+            below to find the section you are looking for.</em
+          >
+        </p>
+        <h3>What personal information do we process?</h3>
+        <p>
+          When you visit, use, or navigate our Services, we may process personal
+          information depending on how you interact with us and the Services,
+          the choices you make, and the products and features you use.
+        </p>
+        <h3>Do we process any sensitive personal information?</h3>
+        <p>
+          Some of the information may be considered "special" or "sensitive" in
+          certain jurisdictions, for example your racial or ethnic origins,
+          sexual orientation, and religious beliefs. We may process sensitive
+          personal information when necessary with your consent or as otherwise
+          permitted by applicable law.
+        </p>
+        <h3>Do we collect any information from third parties?</h3>
+        <p>We do not collect any information from third parties.</p>
+        <h3>How do we process your information?</h3>
+        <p>
+          We process your information to provide, improve, and administer our
+          Services, communicate with you, for security and fraud prevention, and
+          to comply with law. We may also process your information for other
+          purposes with your consent. We process your information only when we
+          have a valid legal reason to do so.
+        </p>
+        <h3>
+          In what situations and with which parties do we share personal
+          information?
+        </h3>
+        <p>
+          We may share information in specific situations and with specific
+          third parties.
+        </p>
+        <h3>How do we keep your information safe?</h3>
+        <p>
+          We have adequate organizational and technical processes and procedures
+          in place to protect your personal information. However, no electronic
+          transmission over the internet or information storage technology can
+          be guaranteed to be 100% secure, so we cannot promise or guarantee
+          that hackers, cybercriminals, or other unauthorized third parties will
+          not be able to defeat our security and improperly collect, access,
+          steal, or modify your information.
+        </p>
+        <h3>What are your rights?</h3>
+        <p>
+          Depending on where you are located geographically, the applicable
+          privacy law may mean you have certain rights regarding your personal
+          information.
+        </p>
+        <h3>How do you exercise your rights?</h3>
+        <p>
+          The easiest way to exercise your rights is by submitting a data
+          subject access request, or by contacting us. We will consider and act
+          upon any request in accordance with applicable data protection laws.
+        </p>
+        <p>
+          Want to learn more about what we do with any information we collect?
+          Review the Privacy Notice in full below.
+        </p>
+        <h2>Table of Contents</h2>
+        <ul>
+          <li><a href="#questions-or-concerns">Questions or concerns?</a></li>
+          <li><a href="#summary-of-key-points">Summary of Key Points</a></li>
+          <li>
+            <a href="#do-we-process-any-sensitive-personal-information"
+              >Do we process any sensitive personal information?</a
+            >
+          </li>
+          <li>
+            <a href="#do-we-collect-any-information-from-third-parties"
+              >Do we collect any information from third parties?</a
+            >
+          </li>
+          <li>
+            <a href="#how-do-we-process-your-information"
+              >How do we process your information?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#in-what-situations-and-with-which-parties-do-we-share-personal-information"
+              >In what situations and with which parties do we share personal
+              information?</a
+            >
+          </li>
+          <li>
+            <a href="#how-do-we-keep-your-information-safe"
+              >How do we keep your information safe?</a
+            >
+          </li>
+          <li><a href="#what-are-your-rights">What are your rights?</a></li>
+          <li>
+            <a href="#how-do-you-exercise-your-rights"
+              >How do you exercise your rights?</a
+            >
+          </li>
+          <li>
+            <a href="#1-what-information-do-we-collect"
+              >1. What Information Do We Collect?</a
+            >
+          </li>
+          <li>
+            <a href="#2-how-do-we-process-your-information"
+              >2. How Do We Process Your Information?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#3-what-legal-bases-do-we-rely-on-to-process-your-information"
+              >3. What Legal Bases Do We Rely On to Process Your Information?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#4-when-and-with-whom-do-we-share-your-personal-information"
+              >4. When and With Whom Do We Share Your Personal Information?</a
+            >
+          </li>
+          <li>
+            <a href="#5-what-is-our-stance-on-third-party-websites"
+              >5. What is Our Stance on Third-Party Websites?</a
+            >
+          </li>
+          <li>
+            <a href="#6-do-we-use-cookies-and-other-tracking-technologies"
+              >6. Do We Use Cookies and Other Tracking Technologies?</a
+            >
+          </li>
+          <li>
+            <a href="#7-do-we-offer-artificial-intelligence-based-products"
+              >7. Do We Offer Artificial Intelligence-Based Products?</a
+            >
+          </li>
+          <li>
+            <a href="#8-how-do-we-handle-your-social-logins"
+              >8. How Do We Handle Your Social Logins?</a
+            >
+          </li>
+          <li>
+            <a href="#9-how-long-do-we-keep-your-information"
+              >9. How Long Do We Keep Your Information?</a
+            >
+          </li>
+          <li>
+            <a href="#10-how-do-we-keep-your-information-safe"
+              >10. How Do We Keep Your Information Safe?</a
+            >
+          </li>
+          <li>
+            <a href="#11-do-we-collect-information-from-minors"
+              >11. Do We Collect Information from Minors?</a
+            >
+          </li>
+          <li>
+            <a href="#12-what-are-your-privacy-rights"
+              >12. What Are Your Privacy Rights?</a
+            >
+          </li>
+          <li>
+            <a href="#13-controls-for-do-not-track-features"
+              >13. Controls for Do-Not-Track Features</a
+            >
+          </li>
+          <li>
+            <a
+              href="#14-do-united-states-residents-have-specific-privacy-rights"
+              >14. Do United States Residents Have Specific Privacy Rights?</a
+            >
+          </li>
+          <li>
+            <a href="#15-do-other-regions-have-specific-privacy-rights"
+              >15. Do Other Regions Have Specific Privacy Rights?</a
+            >
+          </li>
+          <li>
+            <a href="#16-do-we-make-updates-to-this-notice"
+              >16. Do We Make Updates to This Notice?</a
+            >
+          </li>
+          <li>
+            <a href="#17-how-can-you-contact-us-about-this-notice"
+              >17. How Can You Contact Us About This Notice?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+              >18. How Can You Review, Update, or Delete the Data We Collect
+              from You?</a
+            >
+          </li>
+        </ul>
+        <h2 id="1-what-information-do-we-collect">
+          1. What Information Do We Collect?
+        </h2>
+        <h3>Personal information you disclose to us</h3>
+        <p>
+          <strong>In Short:</strong>
+          <em>We collect personal information that you provide to us.</em>
+        </p>
+        <p>
+          We collect personal information that you voluntarily provide to us
+          when you register on the Services, express an interest in obtaining
+          information about us or our products and Services, when you
+          participate in activities on the Services, or otherwise when you
+          contact us.
+        </p>
+        <h3>Personal Information Provided by You</h3>
+        <p>
+          The personal information that we collect depends on the context of
+          your interactions with us and the Services, the choices you make, and
+          the products and features you use. The personal information we collect
+          may include the following:
+        </p>
+        <ul>
+          <li>names</li>
+          <li>phone numbers</li>
+          <li>email addresses</li>
+          <li>mailing addresses</li>
+          <li>job titles</li>
+          <li>passwords</li>
+          <li>usernames</li>
+          <li>contact preferences</li>
+          <li>contact or authentication data</li>
+          <li>billing addresses</li>
+          <li>debit/credit card numbers</li>
+        </ul>
+        <h3>Sensitive Information</h3>
+        <p>
+          When necessary, with your consent or as otherwise permitted by
+          applicable law, we process the following categories of sensitive
+          information:
+        </p>
+        <ul>
+          <li>health data</li>
+          <li>biometric data</li>
+          <li>data about a person's sex life or sexual orientation</li>
+          <li>information revealing race or ethnic origin</li>
+          <li>student data</li>
+          <li>credit worthiness data</li>
+          <li>information revealing political opinions</li>
+        </ul>
+        <h3>Payment Data</h3>
+        <p>
+          We may collect data necessary to process your payment if you choose to
+          make purchases, such as your payment instrument number, and the
+          security code associated with your payment instrument. All payment
+          data is handled and stored by Bkash, Nagad, Stripe, and SSL Commerz.
+          You may find their privacy notice link(s) here:
+        </p>
+        <ul>
+          <li><a href="https://www.bkash.com/">https://www.bkash.com/</a></li>
+          <li><a href="https://nagad.com.bd/">https://nagad.com.bd/</a></li>
+          <li><a href="https://stripe.com/">https://stripe.com/</a></li>
+          <li><a href="https://sslcommerz.com/">https://sslcommerz.com/</a></li>
+        </ul>
+        <h3>Social Media Login Data</h3>
+        <p>
+          We may provide you with the option to register with us using your
+          existing social media account details, like your Facebook, X, or other
+          social media account. If you choose to register in this way, we will
+          collect certain profile information about you from the social media
+          provider, as described in the section called
+          <a href="#8-how-do-we-handle-your-social-logins"
+            >How Do We Handle Your Social Logins?</a
+          >
+        </p>
+        <h3>Application Data</h3>
+        <p>
+          If you use our application(s), we also may collect the following
+          information if you choose to provide us with access or permission:
+        </p>
+        <ul>
+          <li>
+            <strong>Geolocation Information.</strong> We may request access or
+            permission to track location-based information from your mobile
+            device, either continuously or while you are using our mobile
+            application(s), to provide certain location-based services. If you
+            wish to change our access or permissions, you may do so in your
+            device's settings.
+          </li>
+          <li>
+            <strong>Mobile Device Access.</strong> We may request access or
+            permission to certain features from your mobile device, including
+            your mobile device's bluetooth, calendar, camera, contacts,
+            microphone, reminders, sensors, SMS messages, social media accounts,
+            storage, and other features. If you wish to change our access or
+            permissions, you may do so in your device's settings.
+          </li>
+          <li>
+            <strong>Mobile Device Data.</strong> We automatically collect device
+            information (such as your mobile device ID, model, and
+            manufacturer), operating system, version information and system
+            configuration information, device and application identification
+            numbers, browser type and version, hardware model, Internet service
+            provider and/or mobile carrier, and Internet Protocol (IP) address
+            (or proxy server). If you are using our application(s), we may also
+            collect information about the phone network associated with your
+            mobile device, your mobile device’s operating system or platform,
+            the type of mobile device you use, your mobile device’s unique
+            device ID, and information about the features of our application(s)
+            you accessed.
+          </li>
+          <li>
+            <strong>Push Notifications.</strong> We may request to send you push
+            notifications regarding your account or certain features of the
+            application(s). If you wish to opt out from receiving these types of
+            communications, you may turn them off in your device's settings.
+          </li>
+        </ul>
+        <p>
+          This information is primarily needed to maintain the security and
+          operation of our application(s), for troubleshooting, and for our
+          internal analytics and reporting purposes.
+        </p>
+        <p>
+          All personal information that you provide to us must be true,
+          complete, and accurate, and you must notify us of any changes to such
+          personal information.
+        </p>
+        <h3>Information Automatically Collected</h3>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >Some information — such as your Internet Protocol (IP) address
+            and/or browser and device characteristics — is collected
+            automatically when you visit our Services.</em
+          >
+        </p>
+        <p>
+          We automatically collect certain information when you visit, use, or
+          navigate the Services. This information does not reveal your specific
+          identity (like your name or contact information) but may include
+          device and usage information, such as:
+        </p>
+        <ul>
+          <li>IP address</li>
+          <li>browser and device characteristics</li>
+          <li>operating system</li>
+          <li>language preferences</li>
+          <li>referring URLs</li>
+          <li>device name</li>
+          <li>country</li>
+          <li>location</li>
+          <li>information about how and when you use our Services</li>
+          <li>other technical information</li>
+        </ul>
+        <p>
+          This information is primarily needed to maintain the security and
+          operation of our Services, and for our internal analytics and
+          reporting purposes.
+        </p>
+        <p>
+          Like many businesses, we also collect information through cookies and
+          similar technologies.
+        </p>
+        <p>The information we collect includes:</p>
+        <ul>
+          <li>
+            <strong>Log and Usage Data.</strong> Log and usage data is
+            service-related, diagnostic, usage, and performance information our
+            servers automatically collect when you access or use our Services
+            and which we record in log files. This data may include your IP
+            address, device information, browser type, and settings, and
+            activity in the Services (such as timestamps of usage, pages viewed,
+            searches, and actions taken), device event information (e.g., system
+            activity, crash dumps), and hardware settings.
+          </li>
+          <li>
+            <strong>Device Data.</strong> We collect data about your device,
+            such as its type (computer, tablet, phone), IP address (or proxy),
+            hardware model, browser type, device identifiers, Internet service
+            provider and/or mobile carrier, operating system, system
+            configuration, and location.
+          </li>
+          <li>
+            <strong>Location Data.</strong> We collect geolocation data — either
+            precise or imprecise — based on the type and settings of the device
+            you use to access the Services. This may include GPS or IP-based
+            location tracking. You may opt out of this collection by disabling
+            location access via your device settings, though this may limit your
+            access to certain Service features.
+          </li>
+        </ul>
+        <h3>Google API</h3>
+        <p>
+          Our use of information received from Google APIs will adhere to
+          <a
+            href="https://developers.google.com/terms/api-services-user-data-policy"
+            >Google API Services User Data Policy</a
+          >, including the
+          <a
+            href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
+            >Limited Use requirements</a
+          >.
+        </p>
+        <h2 id="2-how-do-we-process-your-information">
+          2. How Do We Process Your Information?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We process your information to provide, improve, and administer our
+            Services, communicate with you, for security and fraud prevention,
+            and to comply with law. We may also process your information for
+            other purposes with your consent.</em
+          >
+        </p>
+        <p>
+          We process your personal information for a variety of reasons,
+          depending on how you interact with our Services, including:
+        </p>
+        <ul>
+          <li>
+            <strong
+              >To facilitate account creation and authentication and otherwise
+              manage user accounts.</strong
+            >
+            We may process your information so you can create and log in to your
+            account, as well as keep your account in working order.
+          </li>
+          <li>
+            <strong
+              >To deliver and facilitate delivery of services to the
+              user.</strong
+            >
+            We may process your information to provide you with the requested
+            service.
+          </li>
+          <li>
+            <strong
+              >To respond to user inquiries/offer support to users.</strong
+            >
+            We may process your information to respond to your inquiries and
+            solve any potential issues you might have with the requested
+            service.
+          </li>
+          <li>
+            <strong>To send administrative information to you.</strong> We may
+            process your information to send you details about our products and
+            services, changes to our terms and policies, and other similar
+            information.
+          </li>
+          <li>
+            <strong>To fulfill and manage your orders.</strong> We may process
+            your information to fulfill and manage your orders, payments,
+            returns, and exchanges made through the Services.
+          </li>
+          <li>
+            <strong>To enable user-to-user communications.</strong> We may
+            process your information if you choose to use any of our offerings
+            that allow for communication with another user.
+          </li>
+          <li>
+            <strong>To save or protect an individual's vital interest.</strong>
+            We may process your information when necessary to save or protect an
+            individual’s vital interest, such as to prevent harm.
+          </li>
+        </ul>
+        <h2 id="3-what-legal-bases-do-we-rely-on-to-process-your-information">
+          3. What Legal Bases Do We Rely On to Process Your Information?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We only process your personal information when we believe it is
+            necessary and we have a valid legal reason (i.e., legal basis) to do
+            so under applicable law, like with your consent, to comply with
+            laws, to provide you with services to enter into or fulfill our
+            contractual obligations, to protect your rights, or to fulfill our
+            legitimate business interests.</em
+          >
+        </p>
+        <h3>
+          If you are located in the EU or UK, this section applies to you.
+        </h3>
+        <p>
+          The General Data Protection Regulation (GDPR) and UK GDPR require us
+          to explain the valid legal bases we rely on in order to process your
+          personal information. As such, we may rely on the following legal
+          bases to process your personal information:
+        </p>
+        <ul>
+          <li>
+            <strong>Consent.</strong> We may process your information if you
+            have given us permission (i.e., consent) to use your personal
+            information for a specific purpose. You can withdraw your consent at
+            any time.
+          </li>
+          <li>
+            <strong>Performance of a Contract.</strong> We may process your
+            personal information when we believe it is necessary to fulfill our
+            contractual obligations to you, including providing our Services or
+            at your request prior to entering into a contract with you.
+          </li>
+          <li>
+            <strong>Legal Obligations.</strong> We may process your information
+            where we believe it is necessary for compliance with our legal
+            obligations, such as cooperating with law enforcement or regulatory
+            agencies, exercising or defending our legal rights, or disclosing
+            your information as evidence in litigation in which we are involved.
+          </li>
+          <li>
+            <strong>Vital Interests.</strong> We may process your information
+            where we believe it is necessary to protect your vital interests or
+            the vital interests of a third party, such as situations involving
+            potential threats to the safety of any person.
+          </li>
+        </ul>
+        <h3>If you are located in Canada, this section applies to you.</h3>
+        <p>
+          We may process your information if you have given us specific
+          permission (i.e., express consent) to use your personal information
+          for a specific purpose, or in situations where your permission can be
+          inferred (i.e., implied consent). You can withdraw your consent at any
+          time.
+        </p>
+        <p>
+          In some exceptional cases, we may be legally permitted under
+          applicable law to process your information without your consent,
+          including, for example:
+        </p>
+        <ul>
+          <li>
+            If collection is clearly in the interests of an individual and
+            consent cannot be obtained in a timely way
+          </li>
+          <li>For investigations and fraud detection and prevention</li>
+          <li>For business transactions provided certain conditions are met</li>
+          <li>
+            If it is contained in a witness statement and the collection is
+            necessary to assess, process, or settle an insurance claim
+          </li>
+          <li>
+            For identifying injured, ill, or deceased persons and communicating
+            with next of kin
+          </li>
+          <li>
+            If we have reasonable grounds to believe an individual has been, is,
+            or may be a victim of financial abuse
+          </li>
+          <li>
+            If it is reasonable to expect collection and use with consent would
+            compromise the availability or the accuracy of the information and
+            the collection is reasonable for purposes related to investigating a
+            breach of an agreement or a contravention of the laws of Canada or a
+            province
+          </li>
+          <li>
+            If disclosure is required to comply with a subpoena, warrant, court
+            order, or rules of the court relating to the production of records
+          </li>
+          <li>
+            If it was produced by an individual in the course of their
+            employment, business, or profession and the collection is consistent
+            with the purposes for which the information was produced
+          </li>
+          <li>
+            If the collection is solely for journalistic, artistic, or literary
+            purposes
+          </li>
+          <li>
+            If the information is publicly available and is specified by the
+            regulations
+          </li>
+        </ul>
+        <h2 id="4-when-and-with-whom-do-we-share-your-personal-information">
+          4. When and With Whom Do We Share Your Personal Information?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We may share information in specific situations described in this
+            section and/or with the following third parties.</em
+          >
+        </p>
+        <p>
+          We may need to share your personal information in the following
+          situations:
+        </p>
+        <ul>
+          <li>
+            <strong>Business Transfers.</strong> We may share or transfer your
+            information in connection with, or during negotiations of, any
+            merger, sale of company assets, financing, or acquisition of all or
+            a portion of our business to another company.
+          </li>
+          <li>
+            <strong>When we use Google Maps Platform APIs.</strong> We may share
+            your information with certain Google Maps Platform APIs (e.g.,
+            Google Maps API, Places API). Google Maps uses GPS, Wi-Fi, and cell
+            towers to estimate your location. GPS is accurate to about 20
+            meters, while Wi-Fi and cell towers help improve accuracy when GPS
+            signals are weak, like indoors. This data helps Google Maps provide
+            directions, but it is not always perfectly precise. We obtain and
+            store on your device ("cache") your location for one (1) month. You
+            may revoke your consent anytime by contacting us at the contact
+            details provided at the end of this document.
+          </li>
+          <li>
+            <strong>Business Partners.</strong> We may share your information
+            with our business partners to offer you certain products, services,
+            or promotions.
+          </li>
+          <li>
+            <strong>Other Users.</strong> When you share personal information
+            (for example, by posting comments, contributions, or other content
+            to the Services) or otherwise interact with public areas of the
+            Services, such personal information may be viewed by all users and
+            may be publicly made available outside the Services in perpetuity.
+            If you interact with other users of our Services and register for
+            our Services through a social network (such as Facebook), your
+            contacts on the social network will see your name, profile photo,
+            and descriptions of your activity. Similarly, other users will be
+            able to view descriptions of your activity, communicate with you
+            within our Services, and view your profile.
+          </li>
+        </ul>
+        <h2 id="5-what-is-our-stance-on-third-party-websites">
+          5. What is Our Stance on Third-Party Websites?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We are not responsible for the safety of any information that you
+            share with third parties that we may link to or who advertise on our
+            Services, but are not affiliated with, our Services.</em
+          >
+        </p>
+        <p>
+          The Services may link to third-party websites, online services, or
+          mobile applications and/or contain advertisements from third parties
+          that are not affiliated with us and which may link to other websites,
+          services, or applications. Accordingly, we do not make any guarantee
+          regarding any such third parties, and we will not be liable for any
+          loss or damage caused by the use of such third-party websites,
+          services, or applications.
+        </p>
+        <p>
+          The inclusion of a link toward a third-party website, service, or
+          application does not imply an endorsement by us. We cannot guarantee
+          the safety and privacy of data you provide to any third-party
+          websites. Any data collected by third parties is not covered by this
+          Privacy Notice. We are not responsible for the content or privacy and
+          security practices and policies of any third parties, including other
+          websites, services, or applications that may be linked to or from the
+          Services. You should review the policies of such third parties and
+          contact them directly to respond to your questions.
+        </p>
+        <h2 id="6-do-we-use-cookies-and-other-tracking-technologies">
+          6. Do We Use Cookies and Other Tracking Technologies?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We may use cookies and other tracking technologies to collect and
+            store your information.</em
+          >
+        </p>
+        <p>
+          We may use cookies and similar tracking technologies (like web beacons
+          and pixels) to gather information when you interact with our Services.
+          Some online tracking technologies help us maintain the security of our
+          Services and your account, prevent crashes, fix bugs, save your
+          preferences, and assist with basic site functions.
+        </p>
+        <p>
+          We also permit third parties and service providers to use online
+          tracking technologies on our Services for analytics and advertising,
+          including to help manage and display advertisements, to tailor
+          advertisements to your interests, or to send abandoned shopping cart
+          reminders (depending on your communication preferences). The third
+          parties and service providers use their technology to provide
+          advertising about products and services tailored to your interests
+          which may appear either on our Services or on other websites.
+        </p>
+        <p>
+          To the extent these online tracking technologies are deemed to be a
+          “sale”/“sharing” (which includes targeted advertising, as defined
+          under the applicable laws) under applicable US state laws, you can opt
+          out of these online tracking technologies by submitting a request as
+          described below under section
+          <a href="#14-do-united-states-residents-have-specific-privacy-rights"
+            >Do United States Residents Have Specific Privacy Rights?</a
+          >
+        </p>
+        <p>
+          Specific information about how we use such technologies and how you
+          can refuse certain cookies is set out in our Cookie Notice.
+        </p>
+        <h3>Google Analytics</h3>
+        <p>
+          We may share your information with Google Analytics to track and
+          analyze the use of the Services. The Google Analytics Advertising
+          Features that we may use include: Google Analytics Demographics and
+          Interests Reporting.
+        </p>
+        <p>
+          To opt out of being tracked by Google Analytics across the Services,
+          visit:
+          <a href="https://tools.google.com/dlpage/gaoptout"
+            >https://tools.google.com/dlpage/gaoptout</a
+          >
+        </p>
+        <p>
+          You can also opt out of Google Analytics Advertising Features through:
+        </p>
+        <ul>
+          <li><a href="https://adssettings.google.com/">Ads Settings</a></li>
+          <li>
+            <a href="http://optout.networkadvertising.org/"
+              >http://optout.networkadvertising.org/</a
+            >
+          </li>
+          <li>
+            <a href="http://www.networkadvertising.org/mobile-choice"
+              >http://www.networkadvertising.org/mobile-choice</a
+            >
+          </li>
+        </ul>
+        <p>
+          For more information on the privacy practices of Google, please visit
+          the
+          <a href="https://policies.google.com/">Google Privacy & Terms page</a
+          >.
+        </p>
+        <h2 id="7-do-we-offer-artificial-intelligence-based-products">
+          7. Do We Offer Artificial Intelligence-Based Products?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We offer products, features, or tools powered by artificial
+            intelligence, machine learning, or similar technologies.</em
+          >
+        </p>
+        <p>
+          As part of our Services, we offer products, features, or tools powered
+          by artificial intelligence, machine learning, or similar technologies
+          (collectively, "AI Products"). These tools are designed to enhance
+          your experience and provide you with innovative solutions. The terms
+          in this Privacy Notice govern your use of the AI Products within our
+          Services.
+        </p>
+        <h3>Use of AI Technologies</h3>
+        <p>
+          We provide the AI Products through third-party service providers ("AI
+          Service Providers"), including OpenAI. As outlined in this Privacy
+          Notice, your input, output, and personal information will be shared
+          with and processed by these AI Service Providers to enable your use of
+          our AI Products for purposes outlined in
+          <a
+            href="#3-what-legal-bases-do-we-rely-on-to-process-your-information"
+            >What Legal Bases Do We Rely On to Process Your Personal
+            Information?</a
+          >. You must not use the AI Products in any way that violates the terms
+          or policies of any AI Service Provider.
+        </p>
+        <h3>Our AI Products</h3>
+        <p>Our AI Products are designed for the following functions:</p>
+        <ul>
+          <li>AI bots</li>
+        </ul>
+        <h3>How We Process Your Data Using AI</h3>
+        <p>
+          All personal information processed using our AI Products is handled in
+          line with our Privacy Notice and our agreement with third parties.
+          This ensures high security and safeguards your personal information
+          throughout the process, giving you peace of mind about your data’s
+          safety.
+        </p>
+        <h3>How to Opt Out</h3>
+        <p>
+          We believe in giving you the power to decide how your data is used. To
+          opt out, you can:
+        </p>
+        <ul>
+          <li>Log in to your account settings and update your user account</li>
+          <li>Contact us using the contact information provided</li>
+        </ul>
+        <h2 id="8-how-do-we-handle-your-social-logins">
+          8. How Do We Handle Your Social Logins?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >If you choose to register or log in to our Services using a social
+            media account, we may have access to certain information about
+            you.</em
+          >
+        </p>
+        <p>
+          Our Services offer you the ability to register and log in using your
+          third-party social media account details (like your Facebook or X
+          logins). Where you choose to do this, we will receive certain profile
+          information about you from your social media provider. The profile
+          information we receive may vary depending on the social media provider
+          concerned, but will often include your name, email address, friends
+          list, and profile picture, as well as other information you choose to
+          make public on such a social media platform.
+        </p>
+        <p>
+          We will use the information we receive only for the purposes that are
+          described in this Privacy Notice or that are otherwise made clear to
+          you on the relevant Services. Please note that we do not control, and
+          are not responsible for, other uses of your personal information by
+          your third-party social media provider. We recommend that you review
+          their privacy notice to understand how they collect, use, and share
+          your personal information, and how you can set your privacy
+          preferences on their sites and apps.
+        </p>
+        <h2 id="9-how-long-do-we-keep-your-information">
+          9. How Long Do We Keep Your Information?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We keep your information for as long as necessary to fulfill the
+            purposes outlined in this Privacy Notice unless otherwise required
+            by law.</em
+          >
+        </p>
+        <p>
+          We will only keep your personal information for as long as it is
+          necessary for the purposes set out in this Privacy Notice, unless a
+          longer retention period is required or permitted by law (such as tax,
+          accounting, or other legal requirements). No purpose in this notice
+          will require us keeping your personal information for longer than the
+          period of time in which users have an account with us.
+        </p>
+        <p>
+          When we have no ongoing legitimate business need to process your
+          personal information, we will either delete or anonymize such
+          information, or, if this is not possible (for example, because your
+          personal information has been stored in backup archives), then we will
+          securely store your personal information and isolate it from any
+          further processing until deletion is possible.
+        </p>
+        <h2 id="10-how-do-we-keep-your-information-safe">
+          10. How Do We Keep Your Information Safe?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We aim to protect your personal information through a system of
+            organizational and technical security measures.</em
+          >
+        </p>
+        <p>
+          We have implemented appropriate and reasonable technical and
+          organizational security measures designed to protect the security of
+          any personal information we process. However, despite our safeguards
+          and efforts to secure your information, no electronic transmission
+          over the Internet or information storage technology can be guaranteed
+          to be 100% secure, so we cannot promise or guarantee that hackers,
+          cybercriminals, or other unauthorized third parties will not be able
+          to defeat our security and improperly collect, access, steal, or
+          modify your information.
+        </p>
+        <p>
+          Although we will do our best to protect your personal information,
+          transmission of personal information to and from our Services is at
+          your own risk. You should only access the Services within a secure
+          environment.
+        </p>
+        <h2 id="11-do-we-collect-information-from-minors">
+          11. Do We Collect Information from Minors?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >We do not knowingly collect data from or market to children under
+            18 years of age.</em
+          >
+        </p>
+        <p>
+          We do not knowingly collect, solicit data from, or market to children
+          under 18 years of age, nor do we knowingly sell such personal
+          information. By using the Services, you represent that you are at
+          least 18 or that you are the parent or guardian of such a minor and
+          consent to such minor dependent’s use of the Services.
+        </p>
+        <p>
+          If we learn that personal information from users less than 18 years of
+          age has been collected, we will deactivate the account and take
+          reasonable measures to promptly delete such data from our records. If
+          you become aware of any data we may have collected from children under
+          age 18, please contact us at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
+        </p>
+        <h2 id="12-what-are-your-privacy-rights">
+          12. What Are Your Privacy Rights?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >Depending on your state of residence in the US or in some regions,
+            such as the European Economic Area (EEA), United Kingdom (UK),
+            Switzerland, and Canada, you have rights that allow you greater
+            access to and control over your personal information. You may
+            review, change, or terminate your account at any time, depending on
+            your country, province, or state of residence.</em
+          >
+        </p>
+        <p>
+          In some regions (like the EEA, UK, Switzerland, and Canada), you have
+          certain rights under applicable data protection laws. These may
+          include the right:
+        </p>
+        <ol>
+          <li>
+            To request access and obtain a copy of your personal information
+          </li>
+          <li>To request rectification or erasure</li>
+          <li>To restrict the processing of your personal information</li>
+          <li>To data portability (if applicable)</li>
+          <li>To not be subject to automated decision-making</li>
+        </ol>
+        <p>
+          In certain circumstances, you may also have the right to object to the
+          processing of your personal information. You can make such a request
+          by contacting us using the contact details provided in the section
+          <a href="#17-how-can-you-contact-us-about-this-notice"
+            >How Can You Contact Us About This Notice?</a
+          >
+          below.
+        </p>
+        <p>
+          We will consider and act upon any request in accordance with
+          applicable data protection laws.
+        </p>
+        <p>
+          If you are located in the EEA or UK and you believe we are unlawfully
+          processing your personal information, you also have the right to
+          complain to your Member State data protection authority or UK data
+          protection authority.
+        </p>
+        <p>
+          If you are located in Switzerland, you may contact the Federal Data
+          Protection and Information Commissioner.
+        </p>
+        <h3>Withdrawing your consent:</h3>
+        <p>
+          If we are relying on your consent to process your personal
+          information, which may be express and/or implied depending on the
+          applicable law, you have the right to withdraw your consent at any
+          time. You can withdraw your consent at any time by contacting us by
+          using the contact details provided in the section
+          <a href="#17-how-can-you-contact-us-about-this-notice"
+            >How Can You Contact Us About This Notice?</a
+          >
+          below or updating your preferences.
+        </p>
+        <p>
+          Please note: this will not affect the lawfulness of the processing
+          before its withdrawal nor, when applicable law allows, will it affect
+          the processing of your personal information conducted in reliance on
+          lawful processing grounds other than consent.
+        </p>
+        <h3>Opting out of marketing and promotional communications:</h3>
+        <p>
+          You can unsubscribe from our marketing and promotional communications
+          at any time by:
+        </p>
+        <ul>
+          <li>Clicking on the unsubscribe link in the emails that we send,</li>
+          <li>Replying “STOP” or “UNSUBSCRIBE” to SMS messages,</li>
+          <li>
+            Or contacting us using the details in
+            <a href="#17-how-can-you-contact-us-about-this-notice"
+              >How Can You Contact Us About This Notice?</a
+            >.
+          </li>
+        </ul>
+        <p>
+          You will be removed from marketing lists but may still receive
+          necessary service-related messages, such as account administration or
+          support updates.
+        </p>
+        <p>
+          No mobile information will be shared with third parties or affiliates
+          for marketing or promotional purposes. Sharing with support service
+          subcontractors (e.g., customer service) is permitted, but not with
+          text message originator opt-in data or consented details.
+        </p>
+        <h3>Account Information</h3>
+        <p>
+          If you would at any time like to review or change the information in
+          your account or terminate your account, you can:
+        </p>
+        <ul>
+          <li>Contact us using the contact information provided.</li>
+          <li>Log in to your account settings and update your user account.</li>
+        </ul>
+        <p>
+          Upon your request to terminate your account, we will deactivate or
+          delete your account and information from our active databases.
+          However, we may retain some information in our files to prevent fraud,
+          troubleshoot problems, assist with any investigations, enforce our
+          legal terms and/or comply with applicable legal requirements.
+        </p>
+        <h3>Cookies and similar technologies:</h3>
+        <p>
+          Most web browsers are set to accept cookies by default. If you prefer,
+          you can usually choose to set your browser to remove cookies and to
+          reject cookies. If you choose to remove cookies or reject cookies,
+          this could affect certain features or services of our Services. You
+          may also opt out of interest-based advertising by advertisers on our
+          Services.
+        </p>
+        <p>
+          If you have questions or comments about your privacy rights, you may
+          email us at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
+        </p>
+        <h2 id="13-controls-for-do-not-track-features">
+          13. Controls for Do-Not-Track Features
+        </h2>
+        <p>
+          Most web browsers and some mobile operating systems and mobile
+          applications include a Do-Not-Track ("DNT") feature or setting you can
+          activate to signal your privacy preference not to have data about your
+          online browsing activities monitored and collected.
+        </p>
+        <p>
+          At this stage, no uniform technology standard for recognizing and
+          implementing DNT signals has been finalized. As such, we do not
+          currently respond to DNT browser signals or any other mechanism that
+          automatically communicates your choice not to be tracked online. If a
+          standard for online tracking is adopted that we must follow in the
+          future, we will inform you about that practice in a revised version of
+          this Privacy Notice.
+        </p>
+        <p>
+          California law requires us to let you know how we respond to web
+          browser DNT signals. Because there currently is not an industry or
+          legal standard for recognizing or honoring DNT signals, we do not
+          respond to them at this time.
+        </p>
+        <h2 id="14-do-united-states-residents-have-specific-privacy-rights">
+          14. Do United States Residents Have Specific Privacy Rights?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >If you are a resident of California, Colorado, Connecticut,
+            Delaware, Florida, Indiana, Iowa, Kentucky, Minnesota, Montana,
+            Nebraska, New Hampshire, New Jersey, Oregon, Tennessee, Texas, Utah,
+            or Virginia, you may have the right to request access to and receive
+            details about the personal information we maintain about you and how
+            we have processed it, correct inaccuracies, get a copy of, or delete
+            your personal information. You may also have the right to withdraw
+            your consent to our processing of your personal information. These
+            rights may be limited in some circumstances by applicable law. More
+            information is provided below.</em
+          >
+        </p>
+        <h3>Categories of Personal Information We Collect</h3>
+        <p>
+          We have collected the following categories of personal information in
+          the past twelve (12) months:
+        </p>
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Examples</th>
+            <th>Collected</th>
+          </tr>
+          <tr>
+            <td>A. Identifiers</td>
+            <td>
+              Contact details, such as real name, alias, postal address,
+              telephone or mobile contact number, unique personal identifier,
+              online identifier, Internet Protocol address, email address, and
+              account name
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>
+              B. Personal information as defined in the California Customer
+              Records statute
+            </td>
+            <td>
+              Name, contact information, education, employment, employment
+              history, and financial information
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>
+              C. Protected classification characteristics under state or federal
+              law
+            </td>
+            <td>
+              Gender, age, date of birth, race and ethnicity, national origin,
+              marital status, and other demographic data
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>D. Commercial information</td>
+            <td>
+              Transaction information, purchase history, financial details, and
+              payment information
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>E. Biometric information</td>
+            <td>Fingerprints and voiceprints</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>F. Internet or other similar network activity</td>
+            <td>
+              Browsing history, search history, online behavior, interest data,
+              and interactions with our and other websites, applications,
+              systems, and advertisements
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>G. Geolocation data</td>
+            <td>Device location</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>H. Audio, electronic, sensory, or similar information</td>
+            <td>
+              Images and audio, video or call recordings created in connection
+              with our business activities
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>I. Professional or employment-related information</td>
+            <td>
+              Business contact details in order to provide you our Services at a
+              business level or job title, work history, and professional
+              qualifications if you apply for a job with us
+            </td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>J. Education information</td>
+            <td>Student records and directory information</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>K. Inferences drawn from collected personal information</td>
+            <td>
+              Inferences drawn from any of the collected personal information
+              listed above to create a profile or summary about, for example, an
+              individual’s preferences and characteristics
+            </td>
+            <td>YES</td>
+          </tr>
+          <tr>
+            <td>L. Sensitive personal information</td>
+            <td>
+              Account login information, state ID card numbers, genetic data,
+              biometric data, national origin, passport numbers and personal
+              data from a known child
+            </td>
+            <td>YES</td>
+          </tr>
+        </table>
+        <p>
+          We only collect sensitive personal information, as defined by
+          applicable privacy laws or the purposes allowed by law or with your
+          consent. Sensitive personal information may be used, or disclosed to a
+          service provider or contractor, for additional, specified purposes.
+          You may have the right to limit the use or disclosure of your
+          sensitive personal information.
+        </p>
+        <p>
+          We may also collect other personal information outside of these
+          categories through instances where you interact with us in person,
+          online, or by phone or mail in the context of:
+        </p>
+        <ul>
+          <li>Receiving help through our customer support channels;</li>
+          <li>Participation in customer surveys or contests; and</li>
+          <li>
+            Facilitation in the delivery of our Services and to respond to your
+            inquiries.
+          </li>
+        </ul>
+        <p>
+          We will use and retain the collected personal information as needed to
+          provide the Services or for:
+        </p>
+        <ul>
+          <li>
+            <strong>Category K</strong> – As long as the user has an account
+            with us
+          </li>
+          <li>
+            <strong>Category L</strong> – As long as the user has an account
+            with us
+          </li>
+        </ul>
+        <h3>Sources of Personal Information</h3>
+        <p>
+          Learn more about the sources of personal information we collect in
+          <a href="#1-what-information-do-we-collect"
+            >What Information Do We Collect?</a
+          >
+        </p>
+        <h3>How We Use and Share Personal Information</h3>
+        <p>
+          Learn more about how we use your personal information in
+          <a href="#2-how-do-we-process-your-information"
+            >How Do We Process Your Information?</a
+          >
+        </p>
+        <h4>Will your information be shared with anyone else?</h4>
+        <p>
+          We may disclose your personal information with our service providers
+          pursuant to a written contract between us and each service provider.
+          Learn more about how we disclose personal information in
+          <a href="#4-when-and-with-whom-do-we-share-your-personal-information"
+            >When and With Whom Do We Share Your Personal Information?</a
+          >
+        </p>
+        <p>
+          We may use your personal information for our own business purposes,
+          such as for undertaking internal research for technological
+          development and demonstration. This is not considered to be "selling"
+          of your personal information.
+        </p>
+        <p>
+          We have not disclosed, sold, or shared any personal information to
+          third parties for a business or commercial purpose in the preceding
+          twelve (12) months. We will not sell or share personal information in
+          the future belonging to website visitors, users, and other consumers.
+        </p>
+        <h3>Your Rights</h3>
+        <p>
+          You have rights under certain US state data protection laws. However,
+          these rights are not absolute, and in certain cases, we may decline
+          your request as permitted by law. These rights include:
+        </p>
+        <ul>
+          <li>
+            <strong>Right to know</strong> whether or not we are processing your
+            personal data
+          </li>
+          <li><strong>Right to access</strong> your personal data</li>
+          <li>
+            <strong>Right to correct</strong> inaccuracies in your personal data
+          </li>
+          <li>
+            <strong>Right to request</strong> the deletion of your personal data
+          </li>
+          <li>
+            <strong>Right to obtain a copy</strong> of the personal data you
+            previously shared with us
+          </li>
+          <li>
+            <strong>Right to non-discrimination</strong> for exercising your
+            rights
+          </li>
+          <li>
+            <strong>Right to opt out</strong> of:
             <ul>
-              <li>Visit our website at <a href="https://www.algoramming.com">https://www.algoramming.com</a>, or any website of ours that links to this Privacy Notice</li>
-              <li>Download and use our mobile application (Algoramming), or any other application of ours that links to this Privacy Notice</li>
-              <li>Use Algoramming. We craft high-performance software solutions that drive business success. Since 2019, our team of 120+ experts has been delivering top-tier mobile and web apps, ERP/CRM systems, SaaS platforms, and business automation. We blend creativity with technology to build intuitive, scalable, and seamless solutions tailored to your needs. Let’s discuss your vision, goals, and how we can collaborate to bring them to life—100% satisfaction guaranteed, or it’s free! Reach out now and let’s create something amazing together!</li>
-              <li>Engage with us in other related ways, including any sales, marketing, or events</li>
-            </ul>
-          
-            <hr />
-          
-            <h3>Questions or concerns?</h3>
-            <p>
-              Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
-            </p>
-          
-            <hr />
-          
-            <h2>Summary of Key Points</h2>
-            <p><em>This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our <a href="#">table of contents</a> below to find the section you are looking for.</em></p>
-          
-            <h3>What personal information do we process?</h3>
-            <p>When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about <a href="#">personal information you disclose to us</a>.</p>
-          
-            <h2>Do we process any sensitive personal information?</h2>
-            <p>Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We may process sensitive personal information when necessary with your consent or as otherwise permitted by applicable law. Learn more about <a href="#">sensitive information we process</a>.</p>
-          
-            <h2>Do we collect any information from third parties?</h2>
-            <p>We do not collect any information from third parties.</p>
-          
-            <h2>How do we process your information?</h2>
-            <p>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about <a href="#">how we process your information</a>.</p>
-          
-            <h2>In what situations and with which parties do we share personal information?</h2>
-            <p>We may share information in specific situations and with specific third parties. Learn more about <a href="#">when and with whom we share your personal information</a>.</p>
-          
-            <h2>How do we keep your information safe?</h2>
-            <p>We have adequate organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Learn more about <a href="#">how we keep your information safe</a>.</p>
-          
-            <h2>What are your rights?</h2>
-            <p>Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about <a href="#">your privacy rights</a>.</p>
-          
-            <h2>How do you exercise your rights?</h2>
-            <p>The easiest way to exercise your rights is by submitting a <a href="#">data subject access request</a>, or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
-          
-            <hr />
-          
-            <p>Want to learn more about what we do with any information we collect? <a href="#">Review the Privacy Notice in full</a>.</p>
-          
-            <h2>Table of Contents</h2>
-            <ul>
-              <li><a href="#privacy-policy">Privacy Policy</a>
-                <ul><li><a href="#questions-or-concerns">Questions or concerns?</a></li></ul>
+              <li>
+                The processing of your personal data if it is used for targeted
+                advertising (or sharing as defined under California’s privacy
+                law)
               </li>
-              <li><a href="#summary-of-key-points">Summary of Key Points</a></li>
-              <li><a href="#do-we-process-any-sensitive-personal-information">Do we process any sensitive personal information?</a></li>
-              <li><a href="#do-we-collect-any-information-from-third-parties">Do we collect any information from third parties?</a></li>
-              <li><a href="#how-do-we-process-your-information">How do we process your information?</a></li>
-              <li><a href="#in-what-situations-and-with-which-parties-do-we-share-personal-information">In what situations and with which parties do we share personal information?</a></li>
-              <li><a href="#how-do-we-keep-your-information-safe">How do we keep your information safe?</a></li>
-              <li><a href="#what-are-your-rights">What are your rights?</a></li>
-              <li><a href="#how-do-you-exercise-your-rights">How do you exercise your rights?</a></li>
-              <li><a href="#table-of-contents">Table of Contents</a></li>
-              <li><a href="#1-what-information-do-we-collect">1. What Information Do We Collect?</a>
-                <ul>
-                  <li><a href="#personal-information-you-disclose-to-us">Personal information you disclose to us</a></li>
-                  <li><a href="#personal-information-provided-by-you">Personal Information Provided by You</a></li>
-                  <li><a href="#sensitive-information">Sensitive Information</a></li>
-                  <li><a href="#payment-data">Payment Data</a></li>
-                  <li><a href="#social-media-login-data">Social Media Login Data</a></li>
-                  <li><a href="#application-data">Application Data</a></li>
-                  <li><a href="#information-automatically-collected">Information Automatically Collected</a></li>
-                  <li><a href="#google-api">Google API</a></li>
-                </ul>
+              <li>The sale of personal data</li>
+              <li>
+                Profiling in furtherance of decisions that produce legal or
+                similarly significant effects ("profiling")
               </li>
-              <li><a href="#2-how-do-we-process-your-information">2. How Do We Process Your Information?</a></li>
-              <li><a href="#3-what-legal-bases-do-we-rely-on-to-process-your-information">3. What Legal Bases Do We Rely On to Process Your Information?</a>
-                <ul>
-                  <li><a href="#if-you-are-located-in-the-eu-or-uk-this-section-applies-to-you">If you are located in the EU or UK, this section applies to you.</a></li>
-                  <li><a href="#if-you-are-located-in-canada-this-section-applies-to-you">If you are located in Canada, this section applies to you.</a></li>
-                </ul>
-              </li>
-              <li><a href="#4-when-and-with-whom-do-we-share-your-personal-information">4. When and With Whom Do We Share Your Personal Information?</a></li>
-              <li><a href="#5-what-is-our-stance-on-third-party-websites">5. What is Our Stance on Third-Party Websites?</a></li>
-              <li><a href="#6-do-we-use-cookies-and-other-tracking-technologies">6. Do We Use Cookies and Other Tracking Technologies?</a>
-                <ul>
-                  <li><a href="#google-analytics">Google Analytics</a></li>
-                </ul>
-              </li>
-              <li><a href="#7-do-we-offer-artificial-intelligence-based-products">7. Do We Offer Artificial Intelligence-Based Products?</a>
-                <ul>
-                  <li><a href="#use-of-ai-technologies">Use of AI Technologies</a></li>
-                  <li><a href="#our-ai-products">Our AI Products</a></li>
-                  <li><a href="#how-we-process-your-data-using-ai">How We Process Your Data Using AI</a></li>
-                  <li><a href="#how-to-opt-out">How to Opt Out</a></li>
-                </ul>
-              </li>
-              <li><a href="#8-how-do-we-handle-your-social-logins">8. How Do We Handle Your Social Logins?</a></li>
-              <li><a href="#9-how-long-do-we-keep-your-information">9. How Long Do We Keep Your Information?</a></li>
-              <li><a href="#10-how-do-we-keep-your-information-safe">10. How Do We Keep Your Information Safe?</a></li>
-              <li><a href="#11-do-we-collect-information-from-minors">11. Do We Collect Information from Minors?</a></li>
-              <li><a href="#12-what-are-your-privacy-rights">12. What Are Your Privacy Rights?</a></li>
-              <li><a href="#13-controls-for-do-not-track-features">13. Controls for Do-Not-Track Features</a></li>
-              <li><a href="#14-do-united-states-residents-have-specific-privacy-rights">14. Do United States Residents Have Specific Privacy Rights?</a></li>
-              <li><a href="#15-do-other-regions-have-specific-privacy-rights">15. Do Other Regions Have Specific Privacy Rights?</a></li>
-              <li><a href="#16-do-we-make-updates-to-this-notice">16. Do We Make Updates to This Notice?</a></li>
-              <li><a href="#17-how-can-you-contact-us-about-this-notice">17. How Can You Contact Us About This Notice?</a></li>
-              <li><a href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you">18. How Can You Review, Update, or Delete the Data We Collect from You?</a></li>
             </ul>
-          
-            <hr />
-          
-            <h2 id="1-what-information-do-we-collect">1. What Information Do We Collect?</h2>
-          
-            <h3 id="personal-information-you-disclose-to-us">Personal information you disclose to us</h3>
-          
-            <p><strong>In Short:</strong> <em>We collect personal information that you provide to us.</em></p>
-          
-            <p>We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
-          
-            <h3 id="personal-information-provided-by-you">Personal Information Provided by You</h3>
-          
-            <p>The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</p>
-          
-            <ul>
-              <li>names</li>
-              <li>phone numbers</li>
-              <li>email addresses</li>
-              <li>mailing addresses</li>
-              <li>job titles</li>
-              <li>passwords</li>
-              <li>usernames</li>
-              <li>contact preferences</li>
-              <li>contact or authentication data</li>
-              <li>billing addresses</li>
-              <li>debit/credit card numbers</li>
-            </ul>
-          
-            <h3 id="sensitive-information">Sensitive Information</h3>
-          
-            <p>When necessary, with your consent or as otherwise permitted by applicable law, we process the following categories of sensitive information:</p>
-          
-            <ul>
-              <li>health data</li>
-              <li>biometric data</li>
-              <li>data about a person's sex life or sexual orientation</li>
-              <li>information revealing race or ethnic origin</li>
-              <li>student data</li>
-              <li>credit worthiness data</li>
-              <li>information revealing political opinions</li>
-            </ul>
-          
-            <h3 id="payment-data">Payment Data</h3>
-          
-            <p>We may collect data necessary to process your payment if you choose to make purchases, such as your payment instrument number, and the security code associated with your payment instrument. All payment data is handled and stored by Bkash, Nagad, Stripe and SSL Commerz. You may find their privacy notice link(s) here:</p>
-          
-            <ul>
-              <li><a href="https://www.bkash.com/">https://www.bkash.com/</a></li>
-              <li><a href="https://nagad.com.bd/">https://nagad.com.bd/</a></li>
-              <li><a href="https://stripe.com/">https://stripe.com/</a></li>
-              <li><a href="https://sslcommerz.com/">https://sslcommerz.com/</a></li>
-            </ul>
-          
-            <h3 id="social-media-login-data">Social Media Login Data</h3>
-          
-            <p>We may provide you with the option to register with us using your existing social media account details, like your Facebook, X, or other social media account. If you choose to register in this way, we will collect certain profile information about you from the social media provider, as described in the section called <a href="#8-how-do-we-handle-your-social-logins">How Do We Handle Your Social Logins?</a></p>
-          
-            <h3 id="application-data">Application Data</h3>
-          
-            <p>If you use our application(s), we also may collect the following information if you choose to provide us with access or permission:</p>
-          
-            <ul>
-              <li><strong>Geolocation Information.</strong>  
-                We may request access or permission to track location-based information from your mobile device, either continuously or while you are using our mobile application(s), to provide certain location-based services. If you wish to change our access or permissions, you may do so in your device's settings.</li>
-              <li><strong>Mobile Device Access.</strong>  
-                We may request access or permission to certain features from your mobile device, including your mobile device's bluetooth, calendar, camera, contacts, microphone, reminders, sensors, SMS messages, social media accounts, storage, and other features. If you wish to change our access or permissions, you may do so in your device's settings.</li>
-              <li><strong>Mobile Device Data.</strong>  
-                We automatically collect device information (such as your mobile device ID, model, and manufacturer), operating system, version information and system configuration information, device and application identification numbers, browser type and version, hardware model, Internet service provider and/or mobile carrier, and Internet Protocol (IP) address (or proxy server). If you are using our application(s), we may also collect information about the phone network associated with your mobile device, your mobile device’s operating system or platform, the type of mobile device you use, your mobile device’s unique device ID, and information about the features of our application(s) you accessed.</li>
-              <li><strong>Push Notifications.</strong>  
-                We may request to send you push notifications regarding your account or certain features of the application(s). If you wish to opt out from receiving these types of communications, you may turn them off in your device's settings.</li>
-            </ul>
-          
-            <blockquote>
-              <p>This information is primarily needed to maintain the security and operation of our application(s), for troubleshooting, and for our internal analytics and reporting purposes.</p>
-            </blockquote>
-          
-            <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
-          
-            <h3 id="information-automatically-collected">Information Automatically Collected</h3>
-          
-            <p><strong>In Short:</strong> <em>Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Services.</em></p>
-          
-            <p>We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as:</p>
-          
-            <ul>
-              <li>IP address</li>
-              <li>browser and device characteristics</li>
-              <li>operating system</li>
-              <li>language preferences</li>
-              <li>referring URLs</li>
-              <li>device name</li>
-              <li>country</li>
-              <li>location</li>
-              <li>information about how and when you use our Services</li>
-              <li>other technical information</li>
-            </ul>
-          
-            <p>This information is primarily needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes.</p>
-          
-            <p>Like many businesses, we also collect information through cookies and similar technologies.</p>
-          
-            <p>The information we collect includes:</p>
-          
-            <ul>
-              <li><strong>Log and Usage Data.</strong>  
-                Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. This data may include your IP address, device information, browser type, and settings, and activity in the Services (such as timestamps of usage, pages viewed, searches, and actions taken), device event information (e.g., system activity, crash dumps), and hardware settings.</li>
-              <li><strong>Device Data.</strong>  
-                We collect data about your device, such as its type (computer, tablet, phone), IP address (or proxy), hardware model, browser type, device identifiers, Internet service provider and/or mobile carrier, operating system, system configuration, and location.</li>
-              <li><strong>Location Data.</strong>  
-                We collect geolocation data — either precise or imprecise — based on the type and settings of the device you use to access the Services. This may include GPS or IP-based location tracking. You may opt out of this collection by disabling location access via your device settings, though this may limit your access to certain Service features.</li>
-            </ul>
-          
-            <hr />
-          
-            <h3 id="google-api">Google API</h3>
-            <p>Our use of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank" rel="noopener noreferrer">Limited Use requirements</a>.</p>
-          
-            <h2 id="2-how-do-we-process-your-information">2. How Do We Process Your Information?</h2>
-          
-            <p><strong>In Short:</strong> <em>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</em></p>
-          
-            <p>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</p>
-          
-            <ul>
-              <li><strong>To facilitate account creation and authentication and otherwise manage user accounts.</strong> We may process your information so you can create and log in to your account, as well as keep your account in working order.</li>
-              <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
-              <li><strong>To respond to user inquiries/offer support to users.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service.</li>
-              <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information.</li>
-              <li><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services.</li>
-            </ul>
-          
-            <!-- You can continue adding more sections as needed to complete the full README content -->
-          </div>
-          
-          
+          </li>
+        </ul>
+        <p>
+          Depending upon the state where you live, you may also have the
+          following rights:
+        </p>
+        <ul>
+          <li>
+            Right to access the categories of personal data being processed (as
+            permitted by applicable law, including Minnesota’s privacy law)
+          </li>
+          <li>
+            Right to obtain a list of the categories of third parties to which
+            we have disclosed personal data (as permitted by applicable law,
+            including California’s and Delaware’s privacy law)
+          </li>
+          <li>
+            Right to obtain a list of specific third parties to which we have
+            disclosed personal data (as permitted by applicable law, including
+            Minnesota’s and Oregon’s privacy law)
+          </li>
+          <li>
+            Right to review, understand, question, and correct how personal data
+            has been profiled (as permitted by applicable law, including
+            Minnesota’s privacy law)
+          </li>
+          <li>
+            Right to limit use and disclosure of sensitive personal data (as
+            permitted by applicable law, including California’s privacy law)
+          </li>
+          <li>
+            Right to opt out of the collection of sensitive data and personal
+            data collected through the operation of a voice or facial
+            recognition feature (as permitted by applicable law, including
+            Florida’s privacy law)
+          </li>
+        </ul>
+        <h3>How to Exercise Your Rights</h3>
+        <p>
+          To exercise these rights, you can contact us by submitting a data
+          subject access request, by emailing us at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>,
+          or by referring to the contact details at the bottom of this document.
+        </p>
+        <p>
+          We will honor your opt-out preferences if you enact the Global Privacy
+          Control (GPC) opt-out signal on your browser.
+        </p>
+        <p>
+          Under certain US state data protection laws, you can designate an
+          authorized agent to make a request on your behalf. We may deny a
+          request from an authorized agent that does not submit proof that they
+          have been validly authorized to act on your behalf in accordance with
+          applicable laws.
+        </p>
+        <h3>Request Verification</h3>
+        <p>
+          Upon receiving your request, we will need to verify your identity to
+          determine you are the same person about whom we have the information
+          in our system. We will only use personal information provided in your
+          request to verify your identity or authority to make the request.
+        </p>
+        <p>
+          If we cannot verify your identity from the information already
+          maintained by us, we may request that you provide additional
+          information for the purposes of verifying your identity and for
+          security or fraud-prevention purposes.
+        </p>
+        <p>
+          If you submit the request through an authorized agent, we may need to
+          collect additional information to verify your identity before
+          processing your request and the agent will need to provide a written
+          and signed permission from you to submit such request on your behalf.
+        </p>
+        <h3>Appeals</h3>
+        <p>
+          Under certain US state data protection laws, if we decline to take
+          action regarding your request, you may appeal our decision by emailing
+          us at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
+          We will inform you in writing of any action taken or not taken in
+          response to the appeal, including a written explanation of the reasons
+          for the decisions. If your appeal is denied, you may submit a
+          complaint to your state attorney general.
+        </p>
+        <h3>California "Shine The Light" Law</h3>
+        <p>
+          California Civil Code Section 1798.83, also known as the "Shine The
+          Light" law, permits our users who are California residents to request
+          and obtain from us, once a year and free of charge, information about
+          categories of personal information (if any) we disclosed to third
+          parties for direct marketing purposes and the names and addresses of
+          all third parties with which we shared personal information in the
+          immediately preceding calendar year.
+        </p>
+        <p>
+          If you are a California resident and would like to make such a
+          request, please submit your request in writing to us using the contact
+          details provided in the section
+          <a href="#17-how-can-you-contact-us-about-this-notice"
+            >How Can You Contact Us About This Notice?</a
+          >
+        </p>
+        <h2 id="15-do-other-regions-have-specific-privacy-rights">
+          15. Do Other Regions Have Specific Privacy Rights?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >You may have additional rights based on the country you reside
+            in.</em
+          >
+        </p>
+        <h3>Australia and New Zealand</h3>
+        <p>
+          We collect and process your personal information under the obligations
+          and conditions set by Australia's Privacy Act 1988 and New Zealand's
+          Privacy Act 2020 (Privacy Act).
+        </p>
+        <p>
+          This Privacy Notice satisfies the notice requirements defined in both
+          Privacy Acts, in particular: what personal information we collect from
+          you, from which sources, for which purposes, and other recipients of
+          your personal information.
+        </p>
+        <p>
+          If you do not wish to provide the personal information necessary to
+          fulfill their applicable purpose, it may affect our ability to provide
+          our services, in particular:
+        </p>
+        <ul>
+          <li>Offer you the products or services that you want</li>
+          <li>Respond to or help with your requests</li>
+          <li>Manage your account with us</li>
+          <li>Confirm your identity and protect your account</li>
+        </ul>
+        <p>
+          At any time, you have the right to request access to or correction of
+          your personal information. You can make such a request by contacting
+          us by using the contact details provided in the section
+          <a
+            href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+            >How Can You Review, Update, or Delete the Data We Collect from
+            You?</a
+          >
+        </p>
+        <p>
+          If you believe we are unlawfully processing your personal information,
+          you have the right to submit a complaint about a breach of the
+          Australian Privacy Principles to the Office of the Australian
+          Information Commissioner and a breach of New Zealand’s Privacy
+          Principles to the Office of New Zealand Privacy Commissioner.
+        </p>
+        <h3>Republic of South Africa</h3>
+        <p>
+          At any time, you have the right to request access to or correction of
+          your personal information. You can make such a request by contacting
+          us by using the contact details provided in the section
+          <a
+            href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+            >How Can You Review, Update, or Delete the Data We Collect from
+            You?</a
+          >
+        </p>
+        <p>
+          If you are unsatisfied with the manner in which we address any
+          complaint with regard to our processing of personal information, you
+          can contact the office of the regulator. Details:
+        </p>
+        <p>
+          <strong>The Information Regulator (South Africa)</strong><br />
+          General enquiries:
+          <a href="mailto:enquiries@inforegulator.org.za"
+            >enquiries@inforegulator.org.za</a
+          ><br />
+          Complaints (complete POPIA/PAIA form 5):<br />
+          <a href="mailto:PAIAComplaints@inforegulator.org.za"
+            >PAIAComplaints@inforegulator.org.za</a
+          >
+          &
+          <a href="mailto:POPIAComplaints@inforegulator.org.za"
+            >POPIAComplaints@inforegulator.org.za</a
+          >
+        </p>
+        <h2 id="16-do-we-make-updates-to-this-notice">
+          16. Do We Make Updates to This Notice?
+        </h2>
+        <p>
+          <strong>In Short:</strong>
+          <em
+            >Yes, we will update this notice as necessary to stay compliant with
+            relevant laws.</em
+          >
+        </p>
+        <p>
+          We may update this Privacy Notice from time to time. The updated
+          version will be indicated by an updated "Revised" date at the top of
+          this Privacy Notice. If we make material changes to this Privacy
+          Notice, we may notify you either by prominently posting a notice of
+          such changes or by directly sending you a notification. We encourage
+          you to review this Privacy Notice frequently to be informed of how we
+          are protecting your information.
+        </p>
+        <h2 id="17-how-can-you-contact-us-about-this-notice">
+          17. How Can You Contact Us About This Notice?
+        </h2>
+        <p>
+          If you have questions or comments about this notice, you may email us
+          at
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>
+          or contact us by post at:
+        </p>
+        <p>
+          <strong>Algoramming</strong><br />
+          House #12, Road #02, DAG #1677, Anandanagar, Dhaka-1212<br />
+          Dhaka 1212<br />
+          Bangladesh
+        </p>
+        <h2
+          id="18-how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+        >
+          18. How Can You Review, Update, or Delete the Data We Collect from
+          You?
+        </h2>
+        <p>
+          Based on the applicable laws of your country or state of residence in
+          the US, you may have the right to request access to the personal
+          information we collect from you, details about how we have processed
+          it, correct inaccuracies, or delete your personal information. You may
+          also have the right to withdraw your consent to our processing of your
+          personal information. These rights may be limited in some
+          circumstances by applicable law.
+        </p>
+        <p>
+          To request to review, update, or delete your personal information,
+          please fill out and submit a data subject access request.
+        </p>
+      </div>
 
-        <!-- Bengali Content -->
-        <div id="bn-content" class="content">
-            <h1>গোপনীয়তা নীতি</h1>
-            <p class="last-updated"><strong>সর্বশেষ আপডেট ১ জুন, ২০২১</strong></p>
-          
-            <p>
-              অ্যালগোরামিং-এর এই গোপনীয়তা বিজ্ঞপ্তি ("<strong>আমরা</strong>," "<strong>আমাদের</strong>," বা "<strong>আমাদের</strong>"), বর্ণনা করে যে আমরা কীভাবে এবং কেন আপনার ব্যক্তিগত তথ্য অ্যাক্সেস, সংগ্রহ, সঞ্চয়, ব্যবহার এবং/অথবা শেয়ার ("<strong>প্রক্রিয়াকরণ</strong>") করতে পারি যখন আপনি আমাদের সেবা ("<strong>সেবাসমূহ</strong>") ব্যবহার করেন, যার মধ্যে রয়েছে যখন আপনি:
-            </p>
-          
-            <ul>
-              <li>আমাদের ওয়েবসাইট <a href="https://www.algoramming.com">https://www.algoramming.com</a> অথবা আমাদের যেকোনো ওয়েবসাইট যা এই গোপনীয়তা বিজ্ঞপ্তির সাথে লিঙ্ক করে ভিজিট করেন</li>
-              <li>আমাদের মোবাইল অ্যাপ্লিকেশন (অ্যালগোরামিং) ডাউনলোড ও ব্যবহার করেন, অথবা আমাদের অন্য কোনো অ্যাপ্লিকেশন যা এই গোপনীয়তা বিজ্ঞপ্তির সাথে লিঙ্ক করে</li>
-              <li>অ্যালগোরামিং ব্যবহার করেন। আমরা উচ্চ-পারফরমেন্স সফটওয়্যার সমাধান তৈরি করি যা ব্যবসায়িক সাফল্য চালনা করে। ২০১৯ সাল থেকে, আমাদের ১২০+ বিশেষজ্ঞদের দল শীর্ষস্থানীয় মোবাইল ও ওয়েব অ্যাপ, ERP/CRM সিস্টেম, SaaS প্ল্যাটফর্ম এবং ব্যবসায়িক অটোমেশন সরবরাহ করে আসছে। আমরা সৃজনশীলতা ও প্রযুক্তি মিশিয়ে আপনার চাহিদা অনুযায়ী ইনটুইটিভ, স্কেলেবল এবং সিমলেস সলিউশন তৈরি করি। আসুন আপনার ভিশন ও লক্ষ্য নিয়ে আলোচনা করি এবং একসাথে একটি অসাধারণ কিছু তৈরি করি — ১০০% সন্তুষ্টি না হলে কোন চার্জ নেই!</li>
-              <li>আমাদের সাথে অন্যান্য সম্পর্কিত উপায়ে যুক্ত হন, যেমন বিক্রয়, বিপণন বা ইভেন্ট ইত্যাদি</li>
-            </ul>
-          
-            <hr />
-          
-            <h3>প্রশ্ন বা উদ্বেগ?</h3>
-            <p>
-              এই গোপনীয়তা বিজ্ঞপ্তি পড়ে আপনি আপনার গোপনীয়তার অধিকার ও পছন্দ সম্পর্কে জানতে পারবেন। আমরা আপনার ব্যক্তিগত তথ্য কীভাবে প্রক্রিয়াকরণ করি সে বিষয়ে সিদ্ধান্ত গ্রহণের জন্য দায়ী। যদি আপনি আমাদের নীতি ও অনুশীলনের সাথে একমত না হন, অনুগ্রহ করে আমাদের সেবা ব্যবহার করবেন না। আপনার যদি আরও কোনো প্রশ্ন বা উদ্বেগ থাকে, তাহলে আমাদের ইমেইল করুন: <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
-            </p>
-          
-            <hr />
-          
-            <h2>মূল বিষয়ের সারসংক্ষেপ</h2>
-            <p><em>এই সারসংক্ষেপে আমাদের গোপনীয়তা বিজ্ঞপ্তির মূল পয়েন্টগুলি দেওয়া হয়েছে, কিন্তু আপনি বিস্তারিত জানতে চাইলে প্রতিটি বিষয়ের সাথে সংযুক্ত লিংক ক্লিক করতে পারেন অথবা নীচের <a href="#">সূচীপত্র</a> ব্যবহার করতে পারেন।</em></p>
-          
-            <h3>আমরা কী ধরনের ব্যক্তিগত তথ্য প্রক্রিয়াকরণ করি?</h3>
-            <p>যখন আপনি আমাদের সেবা ব্যবহার বা ভিজিট করেন, আমরা আপনার ব্যবহারের ধরন, আপনার পছন্দ ও ব্যবহৃত পণ্যের ওপর ভিত্তি করে ব্যক্তিগত তথ্য প্রক্রিয়াকরণ করতে পারি। বিস্তারিত জানতে <a href="#">আপনি আমাদের কাছে যে তথ্য প্রদান করেন</a> পড়ুন।</p>
-          
-            <h2>আমরা কি সংবেদনশীল ব্যক্তিগত তথ্য প্রক্রিয়াকরণ করি?</h2>
-            <p>কিছু তথ্য নির্দিষ্ট আইনব্যবস্থায় “বিশেষ” বা “সংবেদনশীল” হিসাবে গণ্য হয়, যেমন জাতিগত বা নৃতাত্ত্বিক উৎপত্তি, যৌন অভিমুখীতা, ও ধর্মীয় বিশ্বাস। আমরা আপনার সম্মতিতে অথবা প্রযোজ্য আইন অনুযায়ী সংবেদনশীল তথ্য প্রক্রিয়াকরণ করি। বিস্তারিত জানতে <a href="#">সংবেদনশীল তথ্যের বিষয়ে</a> পড়ুন।</p>
-          
-            <h2>আমরা কি তৃতীয় পক্ষ থেকে তথ্য সংগ্রহ করি?</h2>
-            <p>আমরা কোনো তৃতীয় পক্ষ থেকে তথ্য সংগ্রহ করি না।</p>
-          
-            <h2>আমরা কীভাবে আপনার তথ্য প্রক্রিয়াকরণ করি?</h2>
-            <p>আমরা আপনার তথ্য ব্যবহার করি আমাদের সেবা প্রদান, উন্নয়ন, পরিচালনা, আপনার সাথে যোগাযোগ, নিরাপত্তা ও জালিয়াতি প্রতিরোধ এবং আইন মেনে চলার জন্য। আপনার সম্মতিতে অন্যান্য উদ্দেশ্যেও তথ্য প্রক্রিয়াকরণ করতে পারি। বিস্তারিত জানতে <a href="#">আমাদের তথ্য প্রক্রিয়াকরণ কিভাবে হয়</a> পড়ুন।</p>
-          
-            <h2>কোন পরিস্থিতিতে এবং কার সাথে আমরা ব্যক্তিগত তথ্য শেয়ার করি?</h2>
-            <p>আমরা নির্দিষ্ট পরিস্থিতি ও তৃতীয় পক্ষের সাথে তথ্য শেয়ার করতে পারি। বিস্তারিত জানতে <a href="#">আমাদের তথ্য শেয়ার করার নিয়ম</a> পড়ুন।</p>
-          
-            <h2>আমরা কীভাবে আপনার তথ্য সুরক্ষিত রাখি?</h2>
-            <p>আমরা পর্যাপ্ত প্রযুক্তিগত ও সাংগঠনিক ব্যবস্থা গ্রহণ করি আপনার তথ্য সুরক্ষার জন্য। তবে, ইন্টারনেটে তথ্য আদান-প্রদান শতভাগ নিরাপদ নয়, তাই আমরা কোনো ধরনের নিরাপত্তার নিশ্চয়তা দিতে পারি না। বিস্তারিত জানতে <a href="#">তথ্য সুরক্ষার নীতিমালা</a> পড়ুন।</p>
-          
-            <h2>আপনার কী অধিকার আছে?</h2>
-            <p>আপনার অবস্থান অনুসারে প্রযোজ্য গোপনীয়তা আইনের অধীনে আপনার কিছু অধিকার থাকতে পারে। বিস্তারিত জানতে <a href="#">আপনার গোপনীয়তার অধিকার</a> পড়ুন।</p>
-          
-            <h2>আপনি কীভাবে আপনার অধিকার ব্যবহার করবেন?</h2>
-            <p>আপনার অধিকার কার্যকর করার সবচেয়ে সহজ উপায় হলো <a href="#">ডেটা বিষয়ক অ্যাক্সেস অনুরোধ</a> জমা দেওয়া অথবা আমাদের সাথে যোগাযোগ করা। আমরা প্রযোজ্য আইন অনুযায়ী আপনার অনুরোধ বিবেচনা করব।</p>
-          
-            <hr />
-          
-            <p>আমাদের তথ্য সংগ্রহ ও ব্যবহার সম্পর্কে আরও জানতে চান? <a href="#">পূর্ণ গোপনীয়তা নীতি দেখুন</a>।</p>
-          
-            <h2>সূচীপত্র</h2>
-            <ul>
-              <li><a href="#privacy-policy">গোপনীয়তা নীতি</a>
-                <ul><li><a href="#questions-or-concerns">প্রশ্ন বা উদ্বেগ?</a></li></ul>
-              </li>
-              <li><a href="#summary-of-key-points">মূল বিষয়ের সারসংক্ষেপ</a></li>
-              <li><a href="#do-we-process-any-sensitive-personal-information">সংবেদনশীল তথ্য প্রক্রিয়াকরণ</a></li>
-              <li><a href="#do-we-collect-any-information-from-third-parties">তৃতীয় পক্ষ থেকে তথ্য সংগ্রহ</a></li>
-              <li><a href="#how-do-we-process-your-information">তথ্য প্রক্রিয়াকরণ</a></li>
-              <li><a href="#in-what-situations-and-with-which-parties-do-we-share-personal-information">তথ্য শেয়ার করার পরিস্থিতি</a></li>
-              <li><a href="#how-do-we-keep-your-information-safe">তথ্য সুরক্ষা</a></li>
-              <li><a href="#what-are-your-rights">আপনার অধিকার</a></li>
-              <li><a href="#how-do-you-exercise-your-rights">অধিকার ব্যবহার</a></li>
-              <li><a href="#table-of-contents">সূচীপত্র</a></li>
-              <li><a href="#1-what-information-do-we-collect">১. আমরা কী তথ্য সংগ্রহ করি?</a>
-                <ul>
-                  <li><a href="#personal-information-you-disclose-to-us">আপনি যে তথ্য প্রদান করেন</a></li>
-                  <li><a href="#personal-information-provided-by-you">ব্যক্তিগত তথ্য</a></li>
-                  <li><a href="#sensitive-information">সংবেদনশীল তথ্য</a></li>
-                  <li><a href="#payment-data">পেমেন্ট তথ্য</a></li>
-                  <li><a href="#social-media-login-data">সোশ্যাল মিডিয়া লগইন তথ্য</a></li>
-                  <li><a href="#application-data">অ্যাপ্লিকেশন তথ্য</a></li>
-                  <li><a href="#information-automatically-collected">স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য</a></li>
-                  <li><a href="#google-api">গুগল API</a></li>
-                </ul>
-              </li>
-              <li><a href="#2-how-do-we-process-your-information">২. আমরা কীভাবে আপনার তথ্য প্রক্রিয়াকরণ করি?</a></li>
-              <li><a href="#3-what-legal-bases-do-we-rely-on-to-process-your-information">৩. আমরা কোন আইনি ভিত্তিতে আপনার তথ্য প্রক্রিয়াকরণ করি?</a></li>
-              <li><a href="#4-when-and-with-whom-do-we-share-your-personal-information">৪. আমরা কখন এবং কার সাথে আপনার তথ্য শেয়ার করি?</a></li>
-              <li><a href="#5-what-is-our-stance-on-third-party-websites">৫. তৃতীয় পক্ষের ওয়েবসাইট সম্পর্কে আমাদের অবস্থান</a></li>
-              <li><a href="#6-do-we-use-cookies-and-other-tracking-technologies">৬. আমরা কি কুকিজ ও অন্যান্য ট্র্যাকিং প্রযুক্তি ব্যবহার করি?</a></li>
-              <li><a href="#7-do-we-offer-artificial-intelligence-based-products">৭. আমরা কি কৃত্রিম বুদ্ধিমত্তাভিত্তিক পণ্য সরবরাহ করি?</a></li>
-              <li><a href="#8-how-do-we-handle-your-social-logins">৮. আমরা কীভাবে আপনার সোশ্যাল লগইন সামলাই?</a></li>
-              <li><a href="#9-how-long-do-we-keep-your-information">৯. আমরা কতদিন আপনার তথ্য রাখি?</a></li>
-              <li><a href="#10-how-do-we-keep-your-information-safe">১০. আমরা কীভাবে আপনার তথ্য সুরক্ষিত রাখি?</a></li>
-              <li><a href="#11-do-we-collect-information-from-minors">১১. আমরা কি কিশোর-কিশোরী থেকে তথ্য সংগ্রহ করি?</a></li>
-              <li><a href="#12-what-are-your-privacy-rights">১২. আপনার গোপনীয়তার অধিকার কী কী?</a></li>
-              <li><a href="#13-controls-for-do-not-track-features">১৩. ডু-নট-ট্র্যাক বৈশিষ্ট্যের নিয়ন্ত্রণ</a></li>
-              <li><a href="#14-do-united-states-residents-have-specific-privacy-rights">১৪. মার্কিন যুক্তরাষ্ট্রের বাসিন্দাদের নির্দিষ্ট গোপনীয়তার অধিকার</a></li>
-              <li><a href="#15-do-other-regions-have-specific-privacy-rights">১৫. অন্যান্য অঞ্চলের নির্দিষ্ট গোপনীয়তার অধিকার</a></li>
-              <li><a href="#16-do-we-make-updates-to-this-notice">১৬. আমরা কি এই বিজ্ঞপ্তিতে পরিবর্তন করি?</a></li>
-              <li><a href="#17-how-can-you-contact-us-about-this-notice">১৭. আপনি কীভাবে আমাদের সাথে যোগাযোগ করবেন?</a></li>
-              <li><a href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you">১৮. আপনি কীভাবে আপনার তথ্য পর্যালোচনা, আপডেট বা মুছতে পারেন?</a></li>
-            </ul>
-          
-            <hr />
-          
-            <h2 id="1-what-information-do-we-collect">১. আমরা কী তথ্য সংগ্রহ করি?</h2>
-          
-            <h3 id="personal-information-you-disclose-to-us">আপনি যে তথ্য প্রদান করেন</h3>
-          
-            <p><strong>সংক্ষেপে:</strong> <em>আমরা সেই ব্যক্তিগত তথ্য সংগ্রহ করি যা আপনি আমাদের প্রদান করেন।</em></p>
-          
-            <p>আপনি যখন আমাদের সেবায় নিবন্ধন করেন, তথ্য জানতে আগ্রহ প্রকাশ করেন, সেবায় অংশগ্রহণ করেন, বা অন্য কোনোভাবে আমাদের সাথে যোগাযোগ করেন, তখন আমরা সেই তথ্য সংগ্রহ করি।</p>
-          
-            <h3 id="personal-information-provided-by-you">ব্যক্তিগত তথ্য</h3>
-          
-            <p>আমরা যে তথ্য সংগ্রহ করি তা আপনার আমাদের সাথে যোগাযোগের প্রসঙ্গ, পছন্দ ও ব্যবহৃত পণ্যের ওপর নির্ভর করে। সংগ্রহকৃত তথ্য হতে পারে:</p>
-          
-            <ul>
-              <li>নাম</li>
-              <li>ফোন নম্বর</li>
-              <li>ইমেইল ঠিকানা</li>
-              <li>ডাক ঠিকানা</li>
-              <li>চাকরির পদবী</li>
-              <li>পাসওয়ার্ড</li>
-              <li>ব্যবহারকারীর নাম</li>
-              <li>যোগাযোগের পছন্দ</li>
-              <li>যোগাযোগ বা প্রমাণীকরণ তথ্য</li>
-              <li>বিলিং ঠিকানা</li>
-              <li>ডেবিট/ক্রেডিট কার্ড নম্বর</li>
-            </ul>
-          
-            <h3 id="sensitive-information">সংবেদনশীল তথ্য</h3>
-          
-            <p>প্রয়োজনে, আপনার সম্মতিতে বা প্রযোজ্য আইন অনুযায়ী, আমরা নিম্নলিখিত সংবেদনশীল তথ্য প্রক্রিয়াকরণ করি:</p>
-          
-            <ul>
-              <li>স্বাস্থ্য তথ্য</li>
-              <li>বায়োমেট্রিক তথ্য</li>
-              <li>একজন ব্যক্তির যৌন জীবন বা যৌন অভিমুখীতা সম্পর্কিত তথ্য</li>
-              <li>জাতি বা নৃতাত্ত্বিক উৎপত্তি প্রকাশকারী তথ্য</li>
-              <li>শিক্ষার্থী তথ্য</li>
-              <li>ঋণযোগ্যতা তথ্য</li>
-              <li>রাজনৈতিক মতামত প্রকাশকারী তথ্য</li>
-            </ul>
-          
-            <h3 id="payment-data">পেমেন্ট তথ্য</h3>
-          
-            <p>আপনি যখন কেনাকাটা করবেন, তখন পেমেন্ট প্রক্রিয়ার জন্য প্রয়োজনীয় তথ্য যেমন পেমেন্ট যন্ত্রের নম্বর এবং নিরাপত্তা কোড আমরা সংগ্রহ করতে পারি। সমস্ত পেমেন্ট তথ্য Bkash, Nagad, Stripe, এবং SSL Commerz দ্বারা পরিচালিত হয়। তাদের গোপনীয়তা নীতি এখানে পাওয়া যাবে:</p>
-          
-            <ul>
-              <li><a href="https://www.bkash.com/">https://www.bkash.com/</a></li>
-              <li><a href="https://nagad.com.bd/">https://nagad.com.bd/</a></li>
-              <li><a href="https://stripe.com/">https://stripe.com/</a></li>
-              <li><a href="https://sslcommerz.com/">https://sslcommerz.com/</a></li>
-            </ul>
-          
-            <h3 id="social-media-login-data">সোশ্যাল মিডিয়া লগইন তথ্য</h3>
-            <p>আমরা আপনাকে সামাজিক মিডিয়া অ্যাকাউন্ট যেমন ফেসবুক, X ইত্যাদি ব্যবহার করে নিবন্ধন করার সুযোগ দিতে পারি। যদি আপনি এই পদ্ধতি বেছে নেন, আমরা ঐ সোশ্যাল মিডিয়া প্রদানকারীর কাছ থেকে আপনার কিছু প্রোফাইল তথ্য সংগ্রহ করব। বিস্তারিত জানতে <a href="#8-how-do-we-handle-your-social-logins">সোশ্যাল লগইন সামলানোর নিয়ম</a> পড়ুন।</p>
-          
-            <h3 id="application-data">অ্যাপ্লিকেশন তথ্য</h3>
-            <p>আপনি যদি আমাদের অ্যাপ্লিকেশন ব্যবহার করেন, তাহলে আপনি আমাদের কিছু অনুমতি দিলে আমরা নিম্নলিখিত তথ্য সংগ্রহ করতে পারি:</p>
-          
-            <ul>
-              <li><strong>অবস্থান তথ্য:</strong> আমরা আপনার মোবাইল ডিভাইস থেকে অবস্থান তথ্য সংগ্রহ করতে পারি, যাতে আমাদের কিছু নির্দিষ্ট অবস্থানভিত্তিক সেবা দেওয়া যায়। আপনি চাইলে আপনার ডিভাইসের সেটিংস থেকে অনুমতি পরিবর্তন করতে পারবেন।</li>
-              <li><strong>মোবাইল ডিভাইস অ্যাক্সেস:</strong> আমরা আপনার মোবাইল ডিভাইসের ব্লুটুথ, ক্যালেন্ডার, ক্যামেরা, কনট্যাক্টস, মাইক্রোফোন, রিমাইন্ডার, সেন্সর, এসএমএস, সামাজিক মিডিয়া অ্যাকাউন্ট, স্টোরেজ ইত্যাদির অনুমতি চাইতে পারি। আপনি চাইলে অনুমতি পরিবর্তন করতে পারেন।</li>
-              <li><strong>মোবাইল ডিভাইস তথ্য:</strong> আমরা স্বয়ংক্রিয়ভাবে আপনার মোবাইল ডিভাইসের আইডি, মডেল, নির্মাতা, অপারেটিং সিস্টেম, ব্রাউজার টাইপ, আইপি অ্যাড্রেস, ইত্যাদি তথ্য সংগ্রহ করি।</li>
-              <li><strong>পুশ নোটিফিকেশন:</strong> আমরা আপনার অ্যাকাউন্ট বা অ্যাপ্লিকেশনের বৈশিষ্ট্য সম্পর্কে পুশ নোটিফিকেশন পাঠাতে চাইতে পারি। আপনি চাইলে সেটিংস থেকে তা বন্ধ করতে পারেন।</li>
-            </ul>
-          
-            <blockquote>এই তথ্য মূলত আমাদের অ্যাপ্লিকেশন সুরক্ষা ও কার্যকারিতা রক্ষার জন্য, ত্রুটি অনুসন্ধান এবং অভ্যন্তরীণ বিশ্লেষণের জন্য প্রয়োজন।</blockquote>
-          
-            <h3 id="information-automatically-collected">স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য</h3>
-            <p><strong>সংক্ষেপে:</strong> কিছু তথ্য যেমন আইপি অ্যাড্রেস, ব্রাউজার ও ডিভাইসের বৈশিষ্ট্য স্বয়ংক্রিয়ভাবে সংগৃহীত হয় যখন আপনি আমাদের সেবা ব্যবহার করেন।</p>
-          
-            <p>আমরা স্বয়ংক্রিয়ভাবে নিম্নলিখিত তথ্য সংগ্রহ করি:</p>
-            <ul>
-              <li>আইপি অ্যাড্রেস</li>
-              <li>ব্রাউজার ও ডিভাইসের বৈশিষ্ট্য</li>
-              <li>অপারেটিং সিস্টেম</li>
-              <li>ভাষার পছন্দ</li>
-              <li>রেফারিং URL</li>
-              <li>ডিভাইসের নাম</li>
-              <li>দেশ</li>
-              <li>অবস্থান</li>
-              <li>কিভাবে ও কখন আপনি আমাদের সেবা ব্যবহার করেন তার তথ্য</li>
-              <li>অন্যান্য প্রযুক্তিগত তথ্য</li>
-            </ul>
-          
-            <p>এই তথ্য মূলত সুরক্ষা, সেবা পরিচালনা এবং অভ্যন্তরীণ বিশ্লেষণের জন্য প্রয়োজন।</p>
-          
-            <p>আমরা কুকিজ ও অনুরূপ প্রযুক্তিও ব্যবহার করি।</p>
-          
-            <h3 id="google-api">গুগল API</h3>
-            <p>আমাদের গুগল API ব্যবহার <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">গুগল API পরিষেবার ব্যবহার নীতি</a> অনুসরণ করে, যার মধ্যে রয়েছে <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank" rel="noopener noreferrer">সীমিত ব্যবহারের শর্তাবলী</a>।</p>
-          
-            <h2 id="2-how-do-we-process-your-information">২. আমরা কীভাবে আপনার তথ্য প্রক্রিয়াকরণ করি?</h2>
-            <p><strong>সংক্ষেপে:</strong> আমরা আপনার তথ্য আমাদের সেবা প্রদান, উন্নয়ন, যোগাযোগ, নিরাপত্তা এবং আইনি বাধ্যবাধকতা পূরণে প্রক্রিয়াকরণ করি। আপনার সম্মতিতেও তথ্য প্রক্রিয়াকরণ হতে পারে।</p>
-          
-            <p>আমরা নিম্নলিখিত কারণে আপনার তথ্য প্রক্রিয়াকরণ করতে পারি:</p>
-            <ul>
-              <li><strong>অ্যাকাউন্ট তৈরি ও ব্যবস্থাপনা:</strong> আপনার অ্যাকাউন্ট তৈরি, লগইন ও রক্ষণাবেক্ষণের জন্য।</li>
-              <li><strong>সেবা প্রদানে সহায়তা:</strong> আপনার চাওয়া সেবা প্রদান ও সম্পাদনের জন্য।</li>
-              <li><strong>প্রশ্ন ও সহায়তা:</strong> আপনার প্রশ্নের উত্তর এবং সমস্যা সমাধানে।</li>
-              <li><strong>প্রশাসনিক তথ্য পাঠানো:</strong> পণ্যের তথ্য, শর্তাবলী ও নীতিমালা পরিবর্তন ইত্যাদি জানাতে।</li>
-              <li><strong>অর্ডার সম্পাদনা ও ব্যবস্থাপনা:</strong> অর্ডার, পেমেন্ট, রিটার্ন ও এক্সচেঞ্জ পরিচালনার জন্য।</li>
-            </ul>
-          
-            <!-- Continue to translate remaining sections similarly -->
-          
-          </div>
-          
+      <!-- Bangla Content -->
+      <!-- Continuing from the previous Bangla content section -->
+      <div id="banglaContent" class="content">
+        <!-- Previous content up to the cutoff point -->
+        <p><strong>সর্বশেষ আপডেট: জুন ০১, ২০২১</strong></p>
+        <p>
+          অ্যালগোরামিং-এর এই গোপনীয়তা নোটিশ ("<strong>আমরা</strong>,"
+          "<strong>আমাদের</strong>"), বর্ণনা করে যে আমরা কীভাবে এবং কেন আপনার
+          ব্যক্তিগত তথ্য অ্যাক্সেস, সংগ্রহ, সংরক্ষণ, ব্যবহার এবং/অথবা শেয়ার
+          করতে পারি ("<strong>প্রক্রিয়া</strong>") যখন আপনি আমাদের পরিষেবাগুলি
+          ("<strong>পরিষেবা</strong>") ব্যবহার করেন, যার মধ্যে রয়েছে:
+        </p>
+        <ul>
+          <li>
+            আমাদের ওয়েবসাইটে ভিজিট করুন
+            <a href="https://www.algoramming.com">https://www.algoramming.com</a
+            >, অথবা আমাদের যেকোনো ওয়েবসাইট যা এই গোপনীয়তা নোটিশের সাথে লিঙ্ক
+            করে
+          </li>
+          <li>
+            আমাদের মোবাইল অ্যাপ্লিকেশন (অ্যালগোরামিং) ডাউনলোড এবং ব্যবহার করুন,
+            অথবা আমাদের অন্য কোনো অ্যাপ্লিকেশন যা এই গোপনীয়তা নোটিশের সাথে
+            লিঙ্ক করে
+          </li>
+          <li>
+            অ্যালগোরামিং ব্যবহার করুন। আমরা উচ্চ-কার্যক্ষমতার সফটওয়্যার সমাধান
+            তৈরি করি যা ব্যবসায়িক সাফল্যকে চালিত করে। ২০১৯ সাল থেকে, আমাদের
+            ১২০+ বিশেষজ্ঞের দল শীর্ষস্থানীয় মোবাইল এবং ওয়েব অ্যাপ,
+            ইআরপি/সিআরএম সিস্টেম, সাস প্ল্যাটফর্ম এবং ব্যবসায়িক অটোমেশন সরবরাহ
+            করে আসছে। আমরা সৃজনশীলতার সাথে প্রযুক্তির সমন্বয় করে আপনার প্রয়োজন
+            অনুযায়ী স্বজ্ঞাত, স্কেলযোগ্য এবং নিরবচ্ছিন্ন সমাধান তৈরি করি। আসুন
+            আপনার দৃষ্টিভঙ্গি, লক্ষ্য এবং কীভাবে আমরা একসাথে কাজ করে তা
+            বাস্তবায়ন করতে পারি তা নিয়ে আলোচনা করি—১০০% সন্তুষ্টি নিশ্চিত,
+            নইলে এটি বিনামূল্যে! এখনই যোগাযোগ করুন এবং আসুন একসাথে কিছু
+            আশ্চর্যজনক তৈরি করি!
+          </li>
+          <li>
+            অন্যান্য সম্পর্কিত উপায়ে আমাদের সাথে যোগাযোগ করুন, যার মধ্যে যেকোনো
+            বিক্রয়, বিপণন বা ইভেন্ট অন্তর্ভুক্ত
+          </li>
+        </ul>
+        <h2>প্রশ্ন বা উদ্বেগ?</h2>
+        <p>
+          এই গোপনীয়তা নোটিশ পড়লে আপনি আপনার গোপনীয়তা অধিকার এবং পছন্দগুলি
+          বুঝতে পারবেন। আমরা আপনার ব্যক্তিগত তথ্য কীভাবে প্রক্রিয়া করা হয় তা
+          সম্মপর্কে সিদ্ধান্ত নেওয়ার জন্য দায়ী। যদি আপনি আমাদের নীতি এবং
+          অনুশীলনের সাথে একমত না হন, দয়া করে আমাদের পরিষেবাগুলি ব্যবহার করবেন
+          না। যদি আপনার এখনও কোনো প্রশ্ন বা উদ্বেগ থাকে, দয়া করে আমাদের সাথে
+          যোগাযোগ করুন
+          <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>.
+        </p>
+        <h2 id="summary-of-key-points">মূল পয়েন্টগুলির সারাংশ</h2>
+        <p>
+          <em
+            >এই সারাংশ আমাদের গোপনীয়তা নোটিশ থেকে মূল পয়েন্টগুলো প্রদান করে,
+            তবে আপনি প্রতিটি মূল পয়েন্টের পরে লিঙ্কটি ক্লিক করে বা নীচে আমাদের
+            বিষয়বস্তুর সারণী ব্যবহার করে আপনার খুঁজে পাওয়া বিভাগটি সম্পর্কে
+            আরও বিশদ জানতে পারেন।</em
+          >
+        </p>
+        <h3>আমরা কোন ব্যক্তিগত তথ্য প্রক্রিয়া করি?</h3>
+        <p>
+          যখন আপনি আমাদের পরিষেবাগুলি ভিজিট করেন, ব্যবহার করেন বা নেভিগেট করেন,
+          তখন আমরা আপনার সাথে এবং পরিষেবাগুলির সাথে আপনার মিথস্ক্রিয়া, আপনার
+          পছন্দ এবং আপনি যে পণ্য এবং বৈশিষ্ট্যগুলি ব্যবহার করেন তার উপর নির্ভর
+          করে ব্যক্তিগত তথ্য প্রক্রিয়া করতে পারি।
+        </p>
+        <h3 id="do-we-process-any-sensitive-personal-information">
+          আমরা কি কোনো সংবেদনশীল ব্যক্তিগত তথ্য প্রক্রিয়া করি?
+        </h3>
+        <p>
+          কিছু তথ্য কিছু এখতিয়ারে "বিশেষ" বা "সংবেদনশীল" হিসাবে বিবেচিত হতে
+          পারে, উদাহরণস্বরূপ আপনার জাতিগত বা নৃতাত্ত্বিক উৎপত্তি, যৌন প্রবৃত্তি
+          এবং ধর্মীয় বিশ্বাস। আমরা আপনার সম্মতি সহ বা প্রযোজ্য আইন দ্বারা
+          অনুমোদিত হলে সংবেদনশীল ব্যক্তিগত তথ্য প্রক্রিয়া করতে পারি।
+        </p>
+        <h3 id="do-we-collect-any-information-from-third-parties">
+          আমরা কি তৃতীয় পক্ষের কাছ থেকে কোনো তথ্য সংগ্রহ করি?
+        </h3>
+        <p>আমরা তৃতীয় পক্ষের কাছ থেকে কোনো তথ্য সংগ্রহ করি না।</p>
+        <h3 id="how-do-we-process-your-information">
+          আমরা কীভাবে আপনার তথ্য প্রক্রিয়া করি?
+        </h3>
+        <p>
+          আমরা আপনার তথ্য প্রক্রিয়া করি আমাদের পরিষেবাগুলি প্রদান, উন্নত এবং
+          পরিচালনা করতে, আপনার সাথে যোগাযোগ করতে, নিরাপত্তা এবং জালিয়াতি
+          প্রতিরোধের জন্য এবং আইন মেনে চলতে। আমরা আপনার সম্মতি সহ অন্যান্য
+          উদ্দেশ্যেও আপনার তথ্য প্রক্রিয়া করতে পারি। আমরা শুধুমাত্র যখন আমাদের
+          কাছে বৈধ আইনি কারণ থাকে তখনই আপনার তথ্য প্রক্রিয়া করি।
+        </p>
+        <h3
+          id="in-what-situations-and-with-which-parties-do-we-share-personal-information"
+        >
+          কোন পরিস্থিতিতে এবং কোন পক্ষের সাথে আমরা ব্যক্তিগত তথ্য শেয়ার করি?
+        </h3>
+        <p>
+          আমরা নির্দিষ্ট পরিস্থিতিতে এবং নির্দিষ্ট তৃতীয় পক্ষের সাথে তথ্য
+          শেয়ার করতে পারি।
+        </p>
+        <h3 id="how-do-we-keep-your-information-safe">
+          আমরা কীভাবে আপনার তথ্য নিরাপদ রাখি?
+        </h3>
+        <p>
+          আমাদের কাছে আপনার ব্যক্তিগত তথ্য রক্ষা করার জন্য পর্যাপ্ত সাংগঠনিক এবং
+          প্রযুক্তিগত প্রক্রিয়া এবং পদ্ধতি রয়েছে। তবে, ইন্টারনেটের মাধ্যমে
+          কোনো ইলেকট্রনিক সংক্রমণ বা তথ্য সংরক্ষণ প্রযুক্তি ১০০% নিরাপদ হওয়ার
+          নিশ্চয়তা দেওয়া যায় না, তাই আমরা প্রতিশ্রুতি দিতে বা নিশ্চিত করতে
+          পারি না যে হ্যাকার, সাইবার অপরাধী বা অন্যান্য অননুমোদিত তৃতীয় পক্ষ
+          আমাদের নিরাপত্তা ব্যবস্থাকে পরাজিত করে অনুপযুক্তভাবে আপনার তথ্য
+          সংগ্রহ, অ্যাক্সেস, চুরি বা পরিবর্তন করতে পারবে না।
+        </p>
+        <h3 id="what-are-your-rights">আপনার অধিকারগুলি কী?</h3>
+        <p>
+          আপনি ভৌগোলিকভাবে কোথায় অবস্থান করছেন তার উপর নির্ভর করে, প্রযোজ্য
+          গোপনীয়তা আইন আপনার ব্যক্তিগত তথ্য সম্পর্কে নির্দিষ্ট অধিকার প্রদান
+          করতে পারে।
+        </p>
+        <h3 id="how-do-you-exercise-your-rights">
+          আপনি কীভাবে আপনার অধিকার প্রয়োগ করবেন?
+        </h3>
+        <p>
+          আপনার অধিকার প্রয়োগ করার সবচেয়ে সহজ উপায় হল একটি ডেটা সাবজেক্ট
+          অ্যাক্সেস রিকোয়েস্ট জমা দেওয়া, অথবা আমাদের সাথে যোগাযোগ করা। আমরা
+          প্রযোজ্য ডেটা সুরক্ষা আইন অনুসারে যেকোনো অনুরোধ বিবেচনা করে এবং তার
+          উপর কাজ করব।
+        </p>
+        <p>
+          আমরা যে তথ্য সংগ্রহ করি তা সম্পর্কে আরও জানতে চান? নীচে সম্পূর্ণ
+          গোপনীয়তা নোটিশ পর্যালোচনা করুন।
+        </p>
+        <h2>বিষয়বস্তুর সারণী</h2>
+        <ul>
+          <li><a href="#questions-or-concerns">প্রশ্ন বা উদ্বেগ?</a></li>
+          <li><a href="#summary-of-key-points">মূল পয়েন্টগুলির সারাংশ</a></li>
+          <li>
+            <a href="#do-we-process-any-sensitive-personal-information"
+              >আমরা কি কোনো সংবেদনশীল ব্যক্তিগত তথ্য প্রক্রিয়া করি?</a
+            >
+          </li>
+          <li>
+            <a href="#do-we-collect-any-information-from-third-parties"
+              >আমরা কি তৃতীয় পক্ষের কাছ থেকে কোনো তথ্য সংগ্রহ করি?</a
+            >
+          </li>
+          <li>
+            <a href="#how-do-we-process-your-information"
+              >আমরা কীভাবে আপনার তথ্য প্রক্রিয়া করি?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#in-what-situations-and-with-which-parties-do-we-share-personal-information"
+              >কোন পরিস্থিতিতে এবং কোন পক্ষের সাথে আমরা ব্যক্তিগত তথ্য শেয়ার
+              করি?</a
+            >
+          </li>
+          <li>
+            <a href="#how-do-we-keep-your-information-safe"
+              >আমরা কীভাবে আপনার তথ্য নিরাপদ রাখি?</a
+            >
+          </li>
+          <li><a href="#what-are-your-rights">আপনার অধিকারগুলি কী?</a></li>
+          <li>
+            <a href="#how-do-you-exercise-your-rights"
+              >আপনি কীভাবে আপনার অধিকার প্রয়োগ করবেন?</a
+            >
+          </li>
+          <li>
+            <a href="#1-what-information-do-we-collect"
+              >১. আমরা কী তথ্য সংগ্রহ করি?</a
+            >
+          </li>
+          <li>
+            <a href="#2-how-do-we-process-your-information"
+              >২. আমরা কীভাবে আপনার তথ্য প্রক্রিয়া করি?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#3-what-legal-bases-do-we-rely-on-to-process-your-information"
+              >৩. আমরা আপনার তথ্য প্রক্রিয়া করতে কোন আইনি ভিত্তির উপর নির্ভর
+              করি?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#4-when-and-with-whom-do-we-share-your-personal-information"
+              >৪. কখন এবং কার সাথে আমরা আপনার ব্যক্তিগত তথ্য শেয়ার করি?</a
+            >
+          </li>
+          <li>
+            <a href="#5-what-is-our-stance-on-third-party-websites"
+              >৫. তৃতীয় পক্ষের ওয়েবসাইট সম্পর্কে আমাদের অবস্থান কী?</a
+            >
+          </li>
+          <li>
+            <a href="#6-do-we-use-cookies-and-other-tracking-technologies"
+              >৬. আমরা কি কুকিজ এবং অন্যান্য ট্র্যাকিং প্রযুক্তি ব্যবহার করি?</a
+            >
+          </li>
+          <li>
+            <a href="#7-do-we-offer-artificial-intelligence-based-products"
+              >৭. আমরা কি কৃত্রিম বুদ্ধিমত্তা-ভিত্তিক পণ্য অফার করি?</a
+            >
+          </li>
+          <li>
+            <a href="#8-how-do-we-handle-your-social-logins"
+              >৮. আমরা কীভাবে আপনার সামাজিক লগইনগুলি পরিচালনা করি?</a
+            >
+          </li>
+          <li>
+            <a href="#9-how-long-do-we-keep-your-information"
+              >৯. আমরা কতক্ষণ আপনার তথ্য রাখি?</a
+            >
+          </li>
+          <li>
+            <a href="#10-how-do-we-keep-your-information-safe"
+              >১০. আমরা কীভাবে আপনার তথ্য নিরাপদ রাখি?</a
+            >
+          </li>
+          <li>
+            <a href="#11-do-we-collect-information-from-minors"
+              >১১. আমরা কি নাবালকদের কাছ থেকে তথ্য সংগ্রহ করি?</a
+            >
+          </li>
+          <li>
+            <a href="#12-what-are-your-privacy-rights"
+              >১২. আপনার গোপনীয়তা অধিকারগুলি কী?</a
+            >
+          </li>
+          <li>
+            <a href="#13-controls-for-do-not-track-features"
+              >১৩. ডু-নট-ট্র্যাক বৈশিষ্ট্যের জন্য নিয়ন্ত্রণ</a
+            >
+          </li>
+          <li>
+            <a
+              href="#14-do-united-states-residents-have-specific-privacy-rights"
+              >১৪. মার্কিন যুক্তরাষ্ট্রের বাসিন্দাদের কি নির্দিষ্ট গোপনীয়তা
+              অধিকার আছে?</a
+            >
+          </li>
+          <li>
+            <a href="#15-do-other-regions-have-specific-privacy-rights"
+              >১৫. অন্যান্য অঞ্চলের কি নির্দিষ্ট গোপনীয়তা অধিকার আছে?</a
+            >
+          </li>
+          <li>
+            <a href="#16-do-we-make-updates-to-this-notice"
+              >১৬. আমরা কি এই নোটিশ আপডেট করি?</a
+            >
+          </li>
+          <li>
+            <a href="#17-how-can-you-contact-us-about-this-notice"
+              >১৭. এই নোটিশ সম্পর্কে আপনি কীভাবে আমাদের সাথে যোগাযোগ করতে
+              পারেন?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#18-how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+              >১৮. আপনি কীভাবে আমাদের সংগৃহীত তথ্য পর্যালোচনা, আপডেট বা মুছে
+              ফেলতে পারেন?</a
+            >
+          </li>
+        </ul>
+        <h2 id="1-what-information-do-we-collect">
+          ১. আমরা কী তথ্য সংগ্রহ করি?
+        </h2>
+        <h3>আপনি আমাদের কাছে যে ব্যক্তিগত তথ্য প্রকাশ করেন</h3>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em>আমরা আপনার দেওয়া ব্যক্তিগত তথ্য সংগ্রহ করি।</em>
+        </p>
+        <p>
+          আপনি যখন পরিষেবাগুলিতে নিবন্ধন করেন, আমাদের বা আমাদের পণ্য এবং
+          পরিষেবাগুলি সম্পর্কে তথ্য পাওয়ার আগ্রহ প্রকাশ করেন, পরিষেবাগুলিতে
+          ক্রিয়াকলাপে অংশগ্রহণ করেন, অথবা অন্যথায় যখন আপনি আমাদের সাথে যোগাযোগ
+          করেন তখন আমরা স্বেচ্ছায় আপনার দেওয়া ব্যক্তিগত তথ্য সংগ্রহ করি।
+        </p>
+        <h3>আপনার প্রদানকৃত ব্যক্তিগত তথ্য</h3>
+        <p>
+          আমরা যে ব্যক্তিগত তথ্য সংগ্রহ করি তা আপনার আমাদের এবং পরিষেবাগুলির
+          সাথে মিথস্ক্রিয়ার প্রেক্ষাপট, আপনার পছন্দ এবং আপনি যে পণ্য এবং
+          বৈশিষ্ট্যগুলি ব্যবহার করেন তার উপর নির্ভর করে। আমরা যে ব্যক্তিগত তথ্য
+          সংগ্রহ করতে পারি তা নিম্নলিখিতগুলি অন্তর্ভুক্ত করতে পারে:
+        </p>
+        <ul>
+          <li>নাম</li>
+          <li>ফোন নম্বর</li>
+          <li>ইমেইল ঠিকানা</li>
+          <li>মেইলিং ঠিকানা</li>
+          <li>কাজের শিরোনাম</li>
+          <li>পাসওয়ার্ড</li>
+          <li>ব্যবহারকারীর নাম</li>
+          <li>যোগাযোগের পছন্দ</li>
+          <li>যোগাযোগ বা প্রমাণীকরণ ডেটা</li>
+          <li>বিলিং ঠিকানা</li>
+          <li>ডেবিট/ক্রেডিট কার্ড নম্বর</li>
+        </ul>
+        <h3>সংবেদনশীল তথ্য</h3>
+        <p>
+          প্রয়োজন হলে, আপনার সম্মতি সহ বা প্রযোজ্য আইন দ্বারা অনুমোদিত হলে,
+          আমরা নিম্নলিখিত বিভাগের সংবেদনশীল তথ্য প্রক্রিয়া করি:
+        </p>
+        <ul>
+          <li>স্বাস্থ্য ডেটা</li>
+          <li>বায়োমেট্রিক ডেটা</li>
+          <li>একজন ব্যক্তির যৌন জীবন বা যৌন প্রবৃত্তি সম্পর্কিত তথ্য</li>
+          <li>জাতি বা নৃতাত্ত্বিক উৎপত্তি প্রকাশকারী তথ্য</li>
+          <li>ছাত্র ডেটা</li>
+          <li>ক্রেডিট যোগ্যতা ডেটা</li>
+          <li>রাজনৈতিক মতামত প্রকাশকারী তথ্য</li>
+        </ul>
+        <h3>পেমেন্ট ডেটা</h3>
+        <p>
+          আপনি যদি ক্রয় করতে চান তবে আমরা আপনার পেমেন্ট প্রক্রিয়া করার জন্য
+          প্রয়োজনীয় ডেটা সংগ্রহ করতে পারি, যেমন আপনার পেমেন্ট ইন্সট্রুমেন্ট
+          নম্বর এবং আপনার পেমেন্ট ইন্সট্রুমেন্টের সাথে সম্পর্কিত সুরক্ষা কোড।
+          সমস্ত পেমেন্ট ডেটা বিকাশ, নগদ, স্ট্রাইপ এবং এসএসএল কমার্জ দ্বারা
+          পরিচালিত এবং সংরক্ষিত হয়। আপনি তাদের গোপনীয়তা নোটিশ লিঙ্ক(গুলি)
+          এখানে পেতে পারেন:
+        </p>
+        <ul>
+          <li><a href="https://www.bkash.com/">https://www.bkash.com/</a></li>
+          <li><a href="https://nagad.com.bd/">https://nagad.com.bd/</a></li>
+          <li><a href="https://stripe.com/">https://stripe.com/</a></li>
+          <li><a href="https://sslcommerz.com/">https://sslcommerz.com/</a></li>
+        </ul>
+        <h3>সামাজিক মিডিয়া লগইন ডেটা</h3>
+        <p>
+          আমরা আপনাকে আপনার বিদ্যমান সামাজিক মিডিয়া অ্যাকাউন্টের বিবরণ ব্যবহার
+          করে আমাদের সাথে নিবন্ধন করার বিকল্প প্রদান করতে পারি, যেমন আপনার
+          ফেসবুক, এক্স বা অন্যান্য সামাজিক মিডিয়া অ্যাকাউন্ট। আপনি যদি এইভাবে
+          নিবন্ধন করতে চান, তবে আমরা সামাজিক মিডিয়া প্রদানকারীর কাছ থেকে আপনার
+          সম্পর্কে নির্দিষ্ট প্রোফাইল তথ্য সংগ্রহ করব, যেমনটি
+          <a href="#8-how-do-we-handle-your-social-logins"
+            >আমরা কীভাবে আপনার সামাজিক লগইনগুলি পরিচালনা করি?</a
+          >
+          বিভাগে বর্ণিত হয়েছে।
+        </p>
+        <h3>অ্যাপ্লিকেশন ডেটা</h3>
+        <p>
+          আপনি যদি আমাদের অ্যাপ্লিকেশন(গুলি) ব্যবহার করেন, তবে আমরা নিম্নলিখিত
+          তথ্য সংগ্রহ করতে পারি যদি আপনি আমাদের অ্যাক্সেস বা অনুমতি প্রদান করতে
+          চান:
+        </p>
+        <ul>
+          <li>
+            <strong>জিওলোকেশন তথ্য।</strong> আমরা আপনার মোবাইল ডিভাইস থেকে
+            অবিচ্ছিন্নভাবে বা আপনি আমাদের মোবাইল অ্যাপ্লিকেশন(গুলি) ব্যবহার করার
+            সময় অবস্থান-ভিত্তিক তথ্য ট্র্যাক করার জন্য অ্যাক্সেস বা অনুমতি
+            অনুরোধ করতে পারি, নির্দিষ্ট অবস্থান-ভিত্তিক পরিষেবা প্রদানের জন্য।
+            আপনি আমাদের অ্যাক্সেস বা অনুমতি পরিবর্তন করতে চাইলে, আপনি আপনার
+            ডিভাইসের সেটিংসে তা করতে পারেন।
+          </li>
+          <li>
+            <strong>মোবাইল ডিভাইস অ্যাক্সেস।</strong> আমরা আপনার মোবাইল ডিভাইসের
+            নির্দিষ্ট বৈশিষ্ট্যগুলিতে অ্যাক্সেস বা অনুমতি অনুরোধ করতে পারি, যার
+            মধ্যে আপনার মোবাইল ডিভাইসের ব্লুটুথ, ক্যালেন্ডার, ক্যামেরা, পরিচিতি,
+            মাইক্রোফোন, রিমাইন্ডার, সেন্সর, এসএমএস বার্তা, সামাজিক মিডিয়া
+            অ্যাকাউন্ট, স্টোরেজ এবং অন্যান্য বৈশিষ্ট্য অন্তর্ভুক্ত। আপনি আমাদের
+            অ্যাক্সেস বা অনুমতি পরিবর্তন করতে চাইলে, আপনি আপনার ডিভাইসের সেটিংসে
+            তা করতে পারেন।
+          </li>
+          <li>
+            <strong>মোবাইল ডিভাইস ডেটা।</strong> আমরা স্বয়ংক্রিয়ভাবে ডিভাইস
+            তথ্য সংগ্রহ করি (যেমন আপনার মোবাইল ডিভাইস আইডি, মডেল এবং
+            প্রস্তুতকারক), অপারেটিং সিস্টেম, সংস্করণ তথ্য এবং সিস্টেম কনফিগারেশন
+            তথ্য, ডিভাইস এবং অ্যাপ্লিকেশন সনাক্তকরণ নম্বর, ব্রাউজারের ধরন এবং
+            সংস্করণ, হার্ডওয়্যার মডেল, ইন্টারনেট পরিষেবা প্রদানকারী এবং/অথবা
+            মোবাইল ক্যারিয়ার, এবং ইন্টারনেট প্রোটোকল (আইপি) ঠিকানা (বা প্রক্সি
+            সার্ভার)। আপনি যদি আমাদের অ্যাপ্লিকেশন(গুলি) ব্যবহার করেন, তবে আমরা
+            আপনার মোবাইল ডিভাইসের সাথে সম্পর্কিত ফোন নেটওয়ার্ক, আপনার মোবাইল
+            ডিভাইসের অপারেটিং সিস্টেম বা প্ল্যাটফর্ম, আপনি যে ধরনের মোবাইল
+            ডিভাইস ব্যবহার করেন, আপনার মোবাইল ডিভাইসের অনন্য ডিভাইস আইডি এবং
+            আমাদের অ্যাপ্লিকেশন(গুলি)র যে বৈশিষ্ট্যগুলি আপনি অ্যাক্সেস করেছেন সে
+            সম্পর্কে তথ্য সংগ্রহ করতে পারি।
+          </li>
+          <li>
+            <strong>পুশ নোটিফিকেশন।</strong> আমরা আপনার অ্যাকাউন্ট বা
+            অ্যাপ্লিকেশন(গুলি)র নির্দিষ্ট বৈশিষ্ট্য সম্পর্কিত পুশ নোটিফিকেশন
+            পাঠানোর জন্য অনুরোধ করতে পারি। আপনি যদি এই ধরনের যোগাযোগ গ্রহণ থেকে
+            অপ্ট আউট করতে চান, তবে আপনি আপনার ডিভাইসের সেটিংসে তা বন্ধ করতে
+            পারেন।
+          </li>
+        </ul>
+        <p>
+          এই তথ্য প্রাথমিকভাবে আমাদের অ্যাপ্লিকেশন(গুলি)র নিরাপত্তা এবং
+          ক্রিয়াকলাপ বজায় রাখার জন্য, সমস্যা সমাধানের জন্য এবং আমাদের
+          অভ্যন্তরীণ বিশ্লেষণ এবং রিপোর্টিং উদ্দেশ্যে প্রয়োজন।
+        </p>
+        <p>
+          আপনি আমাদের যে সমস্ত ব্যক্তিগত তথ্য প্রদান করেন তা অবশ্যই সত্য,
+          সম্পূর্ণ এবং নির্ভুল হতে হবে এবং আপনাকে এই ধরনের ব্যক্তিগত তথ্যের
+          যেকোনো পরিবর্তন সম্পর্কে আমাদের অবহিত করতে হবে।
+        </p>
+        <h3>স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য</h3>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >কিছু তথ্য — যেমন আপনার ইন্টারনেট প্রোটোকল (আইপি) ঠিকানা এবং/অথবা
+            ব্রাউজার এবং ডিভাইস বৈশিষ্ট্য — আপনি আমাদের পরিষেবাগুলি ভিজিট করলে
+            স্বয়ংক্রিয়ভাবে সংগ্রহ করা হয়।</em
+          >
+        </p>
+        <p>
+          আপনি যখন আমাদের পরিষেবাগুলি ভিজিট করেন, ব্যবহার করেন বা নেভিগেট করেন,
+          তখন আমরা স্বয়ংক্রিয়ভাবে নির্দিষ্ট তথ্য সংগ্রহ করি। এই তথ্য আপনার
+          নির্দিষ্ট পরিচয় প্রকাশ করে না (যেমন আপনার নাম বা যোগাযোগের তথ্য) তবে
+          ডিভাইস এবং ব্যবহারের তথ্য অন্তর্ভুক্ত করতে পারে, যেমন:
+        </p>
+        <ul>
+          <li>আইপি ঠিকানা</li>
+          <li>ব্রাউজার এবং ডিভাইস বৈশিষ্ট্য</li>
+          <li>অপারেটিং সিস্টেম</li>
+          <li>ভাষার পছন্দ</li>
+          <li>রেফারিং ইউআরএল</li>
+          <li>ডিভাইসের নাম</li>
+          <li>দেশ</li>
+          <li>অবস্থান</li>
+          <li>
+            আপনি আমাদের পরিভাগুলি কীভাবে এবং কখন ব্যবহার করেন সে সম্পর্কে তথ্য
+          </li>
+          <li>অন্যান্য প্রযুক্তিগত তথ্য</li>
+        </ul>
+        <p>
+          এই তথ্য প্রাথমিকভাবে আমাদের পরিষেবাগুলির নিরাপত্তা এবং ক্রিয়াকলাপ
+          বজায় রাখার জন্য এবং আমাদের অভ্যন্তরীণ বিশ্লেষণ এবং রিপোর্টিং
+          উদ্দেশ্যে প্রয়োজন।
+        </p>
+        <p>
+          অনেক ব্যবসায়ের মতো, আমরাও কুকিজ এবং অনুরূপ প্রযুক্তির মাধ্যমে তথ্য
+          সংগ্রহ করি।
+        </p>
+        <p>আমরা যে তথ্য সংগ্রহ করি তা অন্তর্ভুক্ত:</p>
+        <ul>
+          <li>
+            <strong>লগ এবং ব্যবহারের ডেটা।</strong> লগ এবং ব্যবহারের ডেটা হল
+            পরিষেবা-সম্পর্কিত, ডায়াগনস্টিক, ব্যবহার এবং কর্মক্ষমতা তথ্য যা
+            আমাদের সার্ভারগুলি আপনি আমাদের পরিষেবাগুলি অ্যাক্সেস বা ব্যবহার করার
+            সময় স্বয়ংক্রিয়ভাবে সংগ্রহ করে এবং যা আমরা লগ ফাইলগুলিতে রেকর্ড
+            করি। এই ডেটার মধ্যে আপনার আইপি ঠিকানা, ডিভাইস তথ্য, ব্রাউজারের ধরন
+            এবং সেটিংস এবং পরিষেবাগুলিতে ক্রিয়াকলাপ (যেমন ব্যবহারের
+            সময়স্ট্যাম্প, দেখা পৃষ্ঠাগুলি, অনুসন্ধান এবং গৃহীত ক্রিয়াগুলি),
+            ডিভাইস ইভেন্ট তথ্য (যেমন, সিস্টেম ক্রিয়াকলাপ, ক্র্যাশ ডাম্প) এবং
+            হার্ডওয়্যার সেটিংস অন্তর্ভুক্ত থাকতে পারে।
+          </li>
+          <li>
+            <strong>ডিভাইস ডেটা।</strong> আমরা আপনার ডিভাইস সম্পর্কে ডেটা সংগ্রহ
+            করি, যেমন এর ধরন (কম্পিউটার, ট্যাবলেট, ফোন), আইপি ঠিকানা (বা
+            প্রক্সি), হার্ডওয়েয়ার মডেল, ব্রাউজারের ধরন, ডিভাইস সনাক্তকারী,
+            ইন্টারনেট পরিষেবা প্রদানকারী এবং/অথবা মোবাইল ক্যারিয়ার, অপারেটিং
+            সিস্টেম, সিস্টেম কনফিগারেশন এবং অবস্থান।
+          </li>
+          <li>
+            <strong>অবস্থান ডেটা।</strong> আমরা জিওলোকেশন ডেটা সংগ্রহ করি — হয়
+            সঠিক বা অসঠিক — আপনি যে ডিভাইসটি পরিষেবাগুলি অ্যাক্সেস করতে ব্যবহার
+            করেন তার ধরন এবং সেটিংসের উপর নির্ভর করে। এর মধ্যে জিপিএস বা
+            আইপি-ভিত্তিক অবস্থান ট্র্যাকিং অন্তর্ভুক্ত থাকতে পারে। আপনি আপনার
+            ডিভাইসের সেটিংসের মাধ্যমে অবস্থান অ্যাক্সেস অক্ষম করে এই সংগ্রহ থেকে
+            অপ্ট আউট করতে পারেন, যদিও এটি কিছু পরিষেবা বৈশিষ্ট্যে আপনার
+            অ্যাক্সেস সীমিত করতে পারে।
+          </li>
+        </ul>
+        <h3>গুগল এপিআই</h3>
+        <p>
+          গুগল এপিআইগুলি থেকে প্রাপ্ত তথ্যের আমাদের ব্যবহার
+          <a
+            href="https://developers.google.com/terms/api-services-user-data-policy"
+            >Google API Services User Data Policy</a
+          >
+          মেনে চলবে, যার মধ্যে
+          <a
+            href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
+            >Limited Use requirements</a
+          >
+          অন্তর্ভুক্ত।
+        </p>
+        <h2 id="2-how-do-we-process-your-information">
+          ২. আমরা কীভাবে আপনার তথ্য প্রক্রিয়া করি?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা আপনার তথ্য প্রদান, উন্নত এবং পরিচালনা করতে, আপনার সাথে যোগাযোগ
+            করতে, নিরাপত্তা এবং জালিয়াতি প্রতিরোধে এবং আইন মেনে চলতে প্রক্রিয়া
+            করি। আমরা আপনার সম্মতি সহ অন্যান্য উদ্দেশ্যেও আপনার তথ্য প্রক্রিয়া
+            করতে পারি।</em
+          >
+        </p>
+        <p>
+          আমরা আপনার ব্যক্তিগত তথ্য বিভিন্ন কারণে প্রক্রিয়া করি, যা আপনি আমাদের
+          পরিষেবাগুলির সাথে কীভাবে মিথস্ক্রিয়া করেন তার উপর নির্ভর করে, যার
+          মধ্যে রয়েছে:
+        </p>
+        <ul>
+          <li>
+            <strong
+              >অ্যাকাউন্ট তৈরি এবং প্রমাণীকরণ সহজ করতে এবং অন্যথায় ব্যবহারকারী
+              অ্যাকাউন্ট পরিচালনা করতে।</strong
+            >
+            আমরা আপনার তথ্য প্রক্রিয়া করতে পারি যাতে আপনি আপনার অ্যাকাউন্ট তৈরি
+            এবং লগইন করতে পারেন, সেইসাথে আপনার অ্যাকাউন্ট কার্যকর রাখতে পারেন।
+          </li>
+          <li>
+            <strong>ব্যবহারকারীদের পরিষেবা প্রদান এবং সরবরাহ সহজ করতে।</strong>
+            আমরা আপনাকে অনুরোধকৃত পরিষেবা প্রদানের জন্য আপনার তথ্য প্রক্রিয়া
+            করতে পারি।
+          </li>
+          <li>
+            <strong
+              >ব্যবহারকারীদের জিজ্ঞাসার জবাব দিতে/ব্যবহারকারীদের সমর্থন প্রদান
+              করতে।</strong
+            >
+            আমরা আপনার জিজ্ঞাসার জবাব দিতে এবং আপনার অনুরোধকৃত পরিষেবার সাথে
+            সম্ভাব্য সমস্যাগুলি সমাধান করতে আপনার তথ্য প্রক্রিয়া করতে পারি।
+          </li>
+          <li>
+            <strong>আপনাকে প্রশাসনিক তথ্য পাঠাতে।</strong> আমরা আমাদের পণ্য এবং
+            পরিষেবা, আমাদের শর্তাবলী এবং নীতিমালার পরিবর্তন এবং অন্যান্য অনুরূপ
+            তথ্য সম্পর্কে বিশদ পাঠাতে আপনার তথ্য প্রক্রিয়া করতে পারি।
+          </li>
+          <li>
+            <strong>আপনার অর্ডার পূরণ এবং পরিচালনা করতে।</strong> আমরা
+            পরিষেবাগুলির মাধ্যমে করা আপনার অর্ডার, পেমেন্ট, রিটার্ন এবং বিনিময়
+            পূরণ এবং পরিচালনা করতে আপনার তথ্য প্রক্রিয়া করতে পারি।
+          </li>
+          <li>
+            <strong>ব্যবহারকারী-থেকে-ব্যবহারকারী যোগাযোগ সক্ষম করতে।</strong>
+            আপনি যদি আমাদের কোনো অফার ব্যবহার করতে চান যা অন্য ব্যবহারকারীর সাথে
+            যোগাযোগের অনুমতি দেয়, তবে আমরা আপনার তথ্য প্রক্রিয়া করতে পারি।
+          </li>
+          <li>
+            <strong
+              >কোনো ব্যক্তির গুরুত্বপূর্ণ স্বার্থ রক্ষা বা সংরক্ষণ করতে।</strong
+            >
+            আমরা আপনার তথ্য প্রক্রিয়া করতে পারি যখন এটি কোনো ব্যক্তির
+            গুরুত্বপূর্ণ স্বার্থ রক্ষা বা সংরক্ষণের জন্য প্রয়োজন, যেমন ক্ষতি
+            প্রতিরোধ করতে।
+          </li>
+        </ul>
+        <h2 id="3-what-legal-bases-do-we-rely-on-to-process-your-information">
+          ৩. আমরা আপনার তথ্য প্রক্রিয়া করতে কোন আইনি ভিত্তির উপর নির্ভর করি?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা শুধুমাত্র তখনই আপনার ব্যক্তিগত তথ্য প্রক্রিয়া করি যখন আমরা
+            বিশ্বাস করি এটি প্রয়োজন এবং প্রযোজ্য আইনের অধীনে আমাদের একটি বৈধ
+            আইনি কারণ (অর্থাৎ, আইনি ভিত্তি) থাকে, যেমন আপনার সম্মতি, আইন মেনে
+            চলতে, আপনাকে পরিষেবা প্রদান করতে বা আমাদের চুক্তিগত বাধ্যবাধকতা পূরণ
+            করতে, আপনার অধিকার রক্ষা করতে, বা আমাদের বৈধ ব্যবসায়িক স্বার্থ পূরণ
+            করতে।</em
+          >
+        </p>
+        <h3>
+          আপনি যদি ইইউ বা যুক্তরাজ্যে অবস্থান করেন, এই বিভাগটি আপনার জন্য
+          প্রযোজ্য।
+        </h3>
+        <p>
+          জেনারেল ডেটা প্রোটেকশন রেগুলেশন (জিডিপিআর) এবং ইউকে জিডিপিআর আমাদেরকে
+          আপনার ব্যক্তিগত তথ্য প্রক্রিয়া করার জন্য যে বৈধ আইনি ভিত্তির উপর আমরা
+          নির্ভর করি তা ব্যাখ্যা করতে বাধ্য করে। তদনুসারে, আমরা আপনার ব্যক্তিগত
+          তথ্য প্রক্রিয়া করার জন্য নিম্নলিখিত আইনি ভিত্তির উপর নির্ভর করতে
+          পারি:
+        </p>
+        <ul>
+          <li>
+            <strong>সম্মতি।</strong> আমরা আপনার তথ্য প্রক্রিয়া করতে পারি যদি
+            আপনি আমাদের নির্দিষ্ট উদ্দেশ্যে আপনার ব্যক্তিগত তথ্য ব্যবহার করার
+            অনুমতি (অর্থাৎ, সম্মতি) দিয়ে থাকেন। আপনি যেকোনো সময় আপনার সম্মতি
+            প্রত্যাহার করতে পারেন।
+          </li>
+          <li>
+            <strong>চুক্তির পালন।</strong> আমরা আপনার ব্যক্তিগত তথ্য প্রক্রিয়া
+            করতে পারি যখন আমরা বিশ্বাস করি যে এটি আপনার প্রতি আমাদের চুক্তিগত
+            বাধ্যবাধকতা পূরণের জন্য প্রয়োজন, যার মধ্যে আমাদের পরিষেবা প্রদান বা
+            আপনার সাথে চুক্তিতে প্রবেশের পূর্বে আপনার অনুরোধে অন্তর্ভুক্ত।
+          </li>
+          <li>
+            <strong>আইনি বাধ্যবাধকতা।</strong> আমরা আপনার তথ্য প্রক্রিয়া করতে
+            পারি যেখানে আমরা বিশ্বাস করি যে এটি আমাদের আইনি বাধ্যবাধকতা মেনে
+            চলার জন্য প্রয়োজন, যেমন আইন প্রয়োগকারী বা নিয়ন্ত্রক সংস্থার সাথে
+            সহযোগিতা করা, আমাদের আইনি অধিকার প্রয়োগ বা রক্ষা করা, অথবা আমরা যে
+            মামলায় জড়িত সেখানে আপনার তথ্য প্রমাণ হিসেবে প্রকাশ করা।
+          </li>
+          <li>
+            <strong>গুরুত্বপূর্ণ স্বার্থ।</strong> আমরা আপনার তথ্য প্রক্রিয়া
+            করতে পারি যেখানে আমরা বিশ্বাস করি যে এটি আপনার গুরুত্বপূর্ণ স্বার্থ
+            বা তৃতীয় পক্ষের গুরুত্বপূর্ণ স্বার্থ রক্ষার জন্য প্রয়োজন, যেমন
+            কোনো ব্যক্তির নিরাপত্তার জন্য সম্ভাব্য হুমকি জড়িত পরিস্থিতি।
+          </li>
+        </ul>
+        <h3>আপনি যদি কানাডায় অবস্থান করেন, এই বিভাগটি আপনার জন্য প্রযোজ্য।</h3>
+        <p>
+          আমরা আপনার তথ্য প্রক্রিয়া করতে পারি যদি আপনি আমাদের নির্দিষ্ট
+          উদ্দেশ্যে আপনার ব্যক্তিগত তথ্য ব্যবহার করার জন্য নির্দিষ্ট অনুমতি
+          (অর্থাৎ, স্পষ্ট সম্মতি) দিয়ে থাকেন, অথবা যেসব পরিস্থিতিতে আপনার
+          অনুমতি অনুমান করা যায় (অর্থাৎ, নিহিত সম্মতি)। আপনি যেকোনো সময় আপনার
+          সম্মতি প্রত্যাহার করতে পারেন।
+        </p>
+        <p>
+          কিছু ব্যতিক্রমী ক্ষেত্রে, প্রযোজ্য আইনের অধীনে আমরা আপনার সম্মতি
+          ছাড়াই আপনার তথ্য প্রক্রিয়া করার জন্য আইনত অনুমোদিত হতে পারি,
+          উদাহরণস্বরূপ:
+        </p>
+        <ul>
+          <li>
+            যদি সংগ্রহ স্পষ্টভাবে কোনো ব্যক্তির স্বার্থে হয় এবং সম্মতি সময়মতো
+            পাওয়া যায় না
+          </li>
+          <li>তদন্ত এবং জালিয়াতি সনাক্তকরণ এবং প্রতিরোধের জন্য</li>
+          <li>ব্যবসায়িক লেনদেনের জন্য যদি নির্দিষ্ট শর্ত পূরণ করা হয়</li>
+          <li>
+            যদি এটি সাক্ষীর বিবৃতিতে থাকে এবং সংগ্রহটি বীমা দাবি মূল্যায়ন,
+            প্রক্রিয়াকরণ বা নিষ্পত্তির জন্য প্রয়োজন হয়
+          </li>
+          <li>
+            আহত, অসুস্থ বা মৃত ব্যক্তিদের সনাক্তকরণ এবং নিকটাত্মীয়দের সাথে
+            যোগাযোগের জন্য
+          </li>
+          <li>
+            যদি আমাদের যুক্তিসঙ্গত কারণ থাকে যে কোনো ব্যক্তি আর্থিক নির্যাতনের
+            শিকার হয়েছে, হচ্ছে বা হতে পারে
+          </li>
+          <li>
+            যদি সম্মতি সহ সংগ্রহ এবং ব্যবহার তথ্যের প্রাপ্যতা বা নির্ভুলতাকে আপস
+            করে এবং সংগ্রহটি চুক্তির লঙ্ঘন বা কানাডা বা একটি প্রদেশের আইন
+            লঙ্ঘনের তদন্তের সাথে সম্পর্কিত উদ্দেশ্যে যুক্তিসঙ্গত হয়
+          </li>
+          <li>
+            যদি প্রকাশের জন্য সাবপোয়েনা, ওয়ারেন্ট, আদালতের আদেশ বা আদালতের
+            নিয়ম অনুসারে রেকর্ড উৎপাদনের প্রয়োজন হয়
+          </li>
+          <li>
+            যদি এটি কোনো ব্যক্তি তাদের কর্মসংস্থান, ব্যবসা বা পেশার সময় উৎপাদন
+            করে এবং সংগ্রহটি যে উদ্দেশ্যে তথ্যটি উৎপাদিত হয়েছিল তার সাথে
+            সামঞ্জস্যপূর্ণ হয়
+          </li>
+          <li>
+            যদি সংগ্রহটি শুধুমাত্র সাংবাদিকতা, শৈল্পিক বা সাহিত্যিক উদ্দেশ্যে
+            হয়
+          </li>
+          <li>
+            যদি তথ্যটি প্রকাশ্যে উপলব্ধ হয় এবং নিয়ম দ্বারা নির্দিষ্ট করা হয়
+          </li>
+        </ul>
+        <h2 id="4-when-and-with-whom-do-we-share-your-personal-information">
+          ৪. কখন এবং কার সাথে আমরা আপনার ব্যক্তিগত তথ্য শেয়ার করি?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা এই বিভাগে বর্ণিত নির্দিষ্ট পরিস্থিতিতে এবং/অথবা নিম্নলিখিত
+            তৃতীয় পক্ষের সাথে তথ্য শেয়ার করতে পারি।</em
+          >
+        </p>
+        <p>
+          আমরা নিম্নলিখিত পরিস্থিতিতে আপনার ব্যক্তিগত তথ্য শেয়ার করতে হতে পারে:
+        </p>
+        <ul>
+          <li>
+            <strong>ব্যবসায়িক স্থানান্তর।</strong> আমরা আপনার তথ্য শেয়ার বা
+            স্থানান্তর করতে পারি যেকোনো একীভূতকরণ, কোম্পানির সম্পদ বিক্রয়,
+            অর্থায়ন, বা আমাদের ব্যবসার সমস্ত বা একটি অংশ অন্য কোম্পানির কাছে
+            অধিগ্রহণের সাথে সম্পর্কিত বা আলোচনার সময়।
+          </li>
+          <li>
+            <strong>যখন আমরা গুগল ম্যাপস প্ল্যাটফর্ম এপিআই ব্যবহার করি।</strong>
+            আমরা আপনার তথ্য নির্দিষ্ট গুগল ম্যাপস প্ল্যাটফর্ম এপিআই (যেমন, গুগল
+            ম্যাপস এপিআই, প্লেসেস এপিআই) এর সাথে শেয়ার করতে পারি। গুগল ম্যাপস
+            আপনার অবস্থান অনুমান করতে জিপিএস, ওয়াই-ফাই এবং সেল টাওয়ার ব্যবহার
+            করে। জিপিএস প্রায় ২০ মিটার পর্যন্ত সঠিক, যখন ওয়াই-ফাই এবং সেল
+            টাওয়ার জিপিএস সিগন্যাল দুর্বল হলে, যেমন ঘরের ভিতরে, নির্ভুলতা উন্নত
+            করতে সাহায্য করে। এই ডেটা গুগল ম্যাপসকে দিকনির্দেশ প্রদান করতে
+            সাহায্য করে, তবে এটি সবসময় পুরোপুরি সঠিক নয়। আমরা আপনার ডিভাইসে
+            ("ক্যাশে") আপনার অবস্থান এক (১) মাসের জন্য প্রাপ্ত এবং সংরক্ষণ করি।
+            আপনি এই নথির শেষে প্রদত্ত যোগাযোগের বিশদ ব্যবহার করে যেকোনো সময়
+            আপনার সম্মতি প্রত্যাহার করতে পারেন।
+          </li>
+          <li>
+            <strong>ব্যবসায়িক অংশীদার।</strong> আমরা আপনাকে নির্দিষ্ট পণ্য,
+            পরিষেবা বা প্রচার অফার করতে আমাদের ব্যবসায়িক অংশীদারদের সাথে আপনার
+            তথ্য শেয়ার করতে পারি।
+          </li>
+          <li>
+            <strong>অন্যান্য ব্যবহারকারী।</strong> যখন আপনি ব্যক্তিগত তথ্য
+            শেয়ার করেন (উদাহরণস্বরূপ, মন্তব্য, অবদান বা অন্যান্য বিষয়বস্তু
+            পোস্ট করে) অথবা পরিষেবাগুলির পাবলিক এলাকার সাথে মিথস্ক্রিয়া করেন,
+            তখন এই ধরনের ব্যক্তিগত তথ্য সমস্ত ব্যবহারকারী দেখতে পারে এবং
+            পরিষেবাগুলির বাইরে চিরস্থায়ীভাবে প্রকাশ্যে উপলব্ধ হতে পারে। আপনি
+            যদি আমাদের পরিষেবাগুলির অন্যান্য ব্যবহারকারীদের সাথে মিথস্ক্রিয়া
+            করেন এবং সামাজিক নেটওয়ার্কের (যেমন ফেসবুক) মাধ্যমে আমাদের
+            পরিষেবাগুলির জন্য নিবন্ধন করেন, তবে সামাজিক নেটওয়ার্কে আপনার
+            পরিচিতিরা আপনার নাম, প্রোফাইল ছবি এবং আপনার ক্রিয়াকলাপের বিবরণ
+            দেখতে পাবে। একইভাবে, অন্যান্য ব্যবহারকারীরা আপনার ক্রিয়াকলাপের
+            বিবরণ দেখতে, আমাদের পরিষেবাগুলির মধ্যে আপনার সাথে যোগাযোগ করতে এবং
+            আপনার প্রোফাইল দেখতে সক্ষম হবে।
+          </li>
+        </ul>
+        <h2 id="5-what-is-our-stance-on-third-party-websites">
+          ৫. তৃতীয় পক্ষের ওয়েবসাইট সম্পর্কে আমাদের অবস্থান কী?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা আমাদের পরিষেবাগুলিতে লিঙ্ক করা বা বিজ্ঞাপন দেওয়া তৃতীয়
+            পক্ষের সাথে আপনি যে তথ্য শেয়ার করেন তার নিরাপত্তার জন্য দায়ী নই,
+            যারা আমাদের পরিষেবাগুলির সাথে সম্পর্কিত নয়।</em
+          >
+        </p>
+        <p>
+          পরিষেবাগুলি তৃতীয় পক্ষের ওয়েবসাইট, অনলাইন পরিষেবা বা মোবাইল
+          অ্যাপ্লিকেশনগুলির সাথে লিঙ্ক করতে পারে এবং/অথবা তৃতীয় পক্ষের বিজ্ঞাপন
+          ধারণ করতে পারে যারা আমাদের সাথে সম্পর্কিত নয় এবং যারা অন্যান্য
+          ওয়েবসাইট, পরিষেবা বা অ্যাপ্লিকেশনগুলির সাথে লিঙ্ক করতে পারে।
+          তদনুসারে, আমরা এই ধরনের তৃতীয় পক্ষের সম্পর্কে কোনো গ্যারান্টি প্রদান
+          করি না, এবং এই ধরনের তৃতীয় পক্ষের ওয়েবসাইট, পরিষেবা বা অ্যাপ্লিকেশন
+          ব্যবহারের ফলে সৃষ্ট কোনো ক্ষতি বা ক্ষতির জন্য আমরা দায়ী থাকব না।
+        </p>
+        <p>
+          তৃতীয় পক্ষের ওয়েবসাইট, পরিষেবা বা অ্যাপ্লিকেশনের প্রতি লিঙ্কের
+          অন্তর্ভুক্তি আমাদের দ্বারা অনুমোদন বোঝায় না। আমরা আপনার প্রদানকৃত
+          কোনো তৃতীয় পক্ষের ওয়েবসাইটের তথ্যের নিরাপত্তা এবং গোপনীয়তার
+          গ্যারান্টি দিতে পারি না। তৃতীয় পক্ষের দ্বারা সংগৃহীত কোনো তথ্য এই
+          গোপনীয়তা নোটিশের আওতায় পড়ে না। আমরা তৃতীয় পক্ষের, অন্যান্য
+          ওয়েবসাইট, পরিষেবা বা অ্যাপ্লিকেশনগুলির বিষয়বস্তু বা গোপনীয়তা এবং
+          নিরাপত্তা অনুশীলন এবং নীতিমালার জন্য দায়ী নই, যা আমাদের পরিষেবাগুলির
+          সাথে বা থেকে লিঙ্ক করা হতে পারে। আপনার উচিত এই ধরনের তৃতীয় পক্ষের
+          নীতিমালা পর্যালোচনা করা এবং আপনার প্রশ্নের জবাব পেতে সরাসরি তাদের সাথে
+          যোগাযোগ করা।
+        </p>
+        <h2 id="6-do-we-use-cookies-and-other-tracking-technologies">
+          ৬. আমরা কি কুকিজ এবং অন্যান্য ট্র্যাকিং প্রযুক্তি ব্যবহার করি?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা আপনার তথ্য সংগ্রহ এবং সংরক্ষণ করতে কুকিজ এবং অন্যান্য
+            ট্র্যাকিং প্রযুক্তি ব্যবহার করতে পারি।</em
+          >
+        </p>
+        <p>
+          আমরা আপনি আমাদের পরিষেবাগুলির সাথে মিথস্ক্রিয়া করার সময় তথ্য সংগ্রহ
+          করতে কুকিজ এবং অনুরূপ ট্র্যাকিং প্রযুক্তি (যেমন ওয়েব বীকন এবং
+          পিক্সেল) ব্যবহার করতে পারি। কিছু অনলাইন ট্র্যাকিং প্রযুক্তি আমাদের
+          পরিষেবাগুলি এবং আপনার অ্যাকাউন্টের নিরাপত্তা বজায় রাখতে, ক্র্যাশ
+          প্রতিরোধ করতে, বাগ ঠিক করতে, আপনার পছন্দগুলি সংরক্ষণ করতে এবং মৌলিক
+          সাইট ফাংশনগুলিতে সহায়তা করতে সাহায্য করে।
+        </p>
+        <p>
+          আমরা তৃতীয় পক্ষ এবং পরিষেবা প্রদানকারীদের আমাদের পরিষেবাগুলিতে
+          বিশ্লেষণ এবং বিজ্ঞাপনের জন্য অনলাইন ট্র্যাকিং প্রযুক্তি ব্যবহার করার
+          অনুমতি দিই, যার মধ্যে বিজ্ঞাপন পরিচালনা এবং প্রদর্শন, আপনার আগ্রহের
+          সাথে বিজ্ঞাপন তৈরি করা, বা পরিত্যক্ত শপিং কার্ট রিমাইন্ডার পাঠানো
+          (আপনার যোগাযোগ পছন্দের উপর নির্ভর করে) অন্তর্ভুক্ত। তৃতীয় পক্ষ এবং
+          পরিষেবা প্রদানকারীরা তাদের প্রযুক্তি ব্যবহার করে আমাদের পরিষেবাগুলিতে
+          বা অন্যান ও ওয়েবসাইটে আপনার আগ্রহের সাথে সামঞ্জস্যপূর্ণ পণ্য এবং
+          পরিষেবাগুলির বিজ্ঞাপন প্রদান করে।
+        </p>
+        <p>
+          যদি এই অনলাইন ট্র্যাকিং প্রযুক্তিগুলি প্রযোজ্য মার্কিন রাজ্য আইনের
+          অধীনে "বিক্রয়"/"শেয়ারিং" (যার মধ্যে লক্ষ্যযুক্ত বিজ্ঞাপন, যেমনটি
+          প্রযোজ্য আইনে সংজ্ঞায়িত) হিসেবে বিবেচিত হয়, তবে আপনি নিচে
+          <a href="#14-do-united-states-residents-have-specific-privacy-rights"
+            >মার্কিন যুক্তরাষ্ট্রের বাসিন্দাদের কি নির্দিষ্ট গোপনীয়তা অধিকার
+            আছে?</a
+          >
+          বিভাগে বর্ণিত একটি অনুরোধ জমা দিয়ে এই অনলাইন ট্র্যাকিং প্রযুক্তিগুলি
+          থেকে অপটি আউট করতে পারেন।
+        </p>
+        <p>
+          এই প্রযুক্তিগুলি কীভাবে ব্যবহার করি এবং কিছু কুকিজ প্রত্যাখ্যান করতে
+          পারেন তা সম্পর্কে নির্দিষ্ট তথ্য আমাদের কুকি নোটিশে উল্লেখ করা আছে।
+        </p>
+        <h3>গুগল বিশ্লেষণ</h3>
+        <p>
+          আমরা পরিষেবাগুলির ব্যবহার ট্র্যাক এবং বিশ্লেষণ করতে গুগল আনালিটিক্সের
+          সাথে আপনার তথ্য শেয়ার করতে পারি। আমরা যে গুগল আনালিটিক্স বিজ্ঞাপন
+          বৈশিষ্ট্যগুলো ব্যবহার করতে পারি তার মধ্যে রয়েছে: গুগল আনালিটিক্স
+          ডেমোগ্রাফিক্স এবং আগ্রহ রিপোর্টিং।
+        </p>
+        <p>
+          পরিষেবাগুলো জুড়ে গুগল আনালিটিক্স দ্বারা ট্র্যাক করা থেকে অপ্ট আউট
+          করতে, ভিজিট করুন:
+          <a href="https://tools.google.com/dlpage/gaoptout"
+            >https://tools.google.com/dlpage/gaoptout</a
+          >
+        </p>
+        <p>
+          আপনি গুগল আনালিটিক্স বিজ্ঞাপন বৈশিষ্ট্যগুলো থেকেও অপ্ট আউট করতে পারেন:
+        </p>
+        <ul>
+          <li><a href="https://adssettings.google.com/">বিজ্ঞাপন সেটিংস</a></li>
+          <li>
+            <a href="http://optout.networkadvertising.org/"
+              >http://optout.networkadvertising.org/</a
+            >
+          </li>
+          <li>
+            <a href="http://www.networkadvertising.org/mobile-choice"
+              >http://www.networkadvertising.org/mobile-choice</a
+            >
+          </li>
+        </ul>
+        <p>
+          গুগলের গোপনীয়তা অনুশীলন সম্পর্কে আরও তথ্যের জন্য, দয়া করে
+          <a href="https://policies.google.com/"
+            >গুগল গোপনীয়তা ও শর্ত পৃষ্ঠা</a
+          >
+          দেখুন।
+        </p>
+        <h2 id="7-do-we-offer-artificial-intelligence-based-products">
+          ৭. আমরা কি কৃত্রিম বুদ্ধিমত্তা-ভিত্তিক পণ্য অফার করি?
+        </h2>
+        <p>
+          <strong>সংক্ষেপে:</strong>
+          <em
+            >আমরা কৃত্রিম বুদ্ধিমত্তা, মেশিন লার্নিং বা অনুরূপ প্রযুক্তি দ্বারা
+            চালিত পণ্য, বৈশিষ্ট্য বা সরঞ্জাম অফার করি।</em
+          >
+        </p>
+        <p>
+          আমাদের পরিষেবার অংশ হিসেবে, আমরা কৃত্রিম বুদ্ধিমত্তা, মেশিন লার্নিং বা
+          অনুরূপ প্রযুক্তি (সম্মিলিতভাবে, "এআই পণ্য") দ্বারা চালিত পণ্য,
+          বৈশিষ্ট্য বা সরঞ্জাম অফার করি। এই সরঞ্জামগুলি আপনার অভিজ্ঞতা উন্নত
+          করতে এবং আপনাকে উদ্ভাবনী সমাধান প্রদান করতে ডিজাইন করা হয়েছে। এই
+          গোপনীয়তা নোটিশ আমাদের পরিষেবাগুলির মধ্যে এআই পণ্যগুলির আপনার ব্যবহার
+          নিয়ন্ত্রণ করে।
+        </p>
+        <h3>এআই প্রযুক্তির ব্যবহার</h3>
+        <p>
+          আমরা তৃতীয় পক্ষের পরিষেবা প্রদানকারীদের ("এআই সার্ভিস প্রোভাইডার")
+          মাধ্যমে এআই পণ্য প্রদান করি, যার মধ্যে OpenAI অন্তর্ভুক্ত। এই
+          গোপনীয়তা নোটিশে উল্লিখিত হিসেবে, আপনার ইনপুট, আউটপুট এবং ব্যক্তিগত
+          তথ্য এই এআই সার্ভিস প্রোভাইডারদের সাথে শেয়ার করা হবে এবং
+          <a
+            href="#3-what-legal-bases-do-we-rely-on-to-process-your-information"
+            >আমরা আপনার ব্যক্তিগত তথ্য প্রক্রিয়া করতে কোন আইনি ভিত্তির উপর
+            নির্ভর করি?</a
+          >
+          এ উল্লিখিত উদ্দেশ্যে আমাদের এআই পণ্যগুলির ব্যবহার সক্ষম করার জন্য
+          প্রক্রিয়া করা হবে। আপনার এআই পণ্যগুলি এমন কোনও উপায়ে ব্যবহার করা
+          উচিত নয় যা কোনও এআই সার্ভিস প্রোভাইডারের শর্ত বা নীতিগুলি লঙ্ঘন করে।
+        </p>
+        <h3>আমাদের এআইন পণ্য</h3>
+        <p>
+          আমাদের এআই পণ্যগুলো নিম্নলিখিত কার্যকারিতার জন্য ডিজাইন করা হয়েছে:
+        </p>
+        <ul>
+          <li>এআই বট</li>
+        </ul>
+        <h3>আমর এআই এর মাধ্যমে আপনার ডেটা কীভাবে প্রক্রিয়া করি</h3>
+        <p>
+          আমাদের এআই পণ্য ব্যবহার করে প্রক্রিয়া করা সমস্ত ব্যক্তিগত তথ্য আমাদের
+          গোপনীয়তা নোটিশ এবং তৃতীয় পক্ষের সাথে আমাদের চুক্তি অনুযায়ী পরিচালিত
+          হয়। এটি প্রক্রিয়া জুড়ে উচ্চ নিরাপত্তা নিশ্চিত করে এবং আপনার
+          ব্যক্তিগত তথ্যের নিরাপত্তা রক্ষা করে, আপনার ডেটার নিরাপত্তা সম্পর্কে
+          আপনাকে মানসিক শান্তি প্রদান করে।
+        </p>
+        <h3>কীভাবে অপ্ট আউট করবেন</h3>
+        <p>
+          আমরা বিশ্বাসী যে আপনার ডেটা কীভাবে ব্যবহৃত হয় তা নির্ণয় করার ক্ষমতা
+          আপনার হওয়া উচিত। অপ্ট আউট করতে, আপনি পারেন:
+        </p>
+        <ul>
+          <li>
+            আপনার অ্যাকাউন্ট সেটিংসে লগইন করে আপনার ব্যবহারকারী অ্যাকাউন্ট আপডেট
+            করুন
+          </li>
+          <li>প্রদত্ত যোগাযোগের তথ্য ব্যবহার করে আমাদের সাথে যোগাযোগ করুন</li>
+        </ul>
+        <h2 id="8-how-do-we-handle-your-social-logins">
+          ৮. আমরা কীভাবে আপনার সামাজিক লগইনগুলি পরিচালনা করি?
+        </h2>
+        <p>
+          <strong>Sংক্ষেপে:</strong>
+          <em
+            >আপনি যদি সামাজিক মিডিয়া অ্যাকযোগাউন্ট ব্যবহার করে আমাদের
+            পরিষেবাগুলিতে নিবন্ধন বা লগইন করতে পছনন্দ করেন, আমরা আপনার সম্পর্কে
+            নির্দিষ্ট তথ্যে অ্যাক্সেস পেতে পারি।</em
+          >
+        </p>
+        <p>
+          আমাদের পরিষেবাগুলি আপনাকে আপনার তৃতীয় পক্ষের সামাজিক মিডিয়া
+          অ্যাকযোগাউন্টের বিশদশ (যেমন আপনার ফেসবুক বা এক্স লগইন) ব্যবহার করে
+          নিবন্ধন এবং লগইন করার সুযোগ দেয়। আপনি যদি এটি করতে পছনন্দ করেন, তাহলে
+          আমরা আপনার সামাজিক মিডিয়া প্রদানকারীর কাছ থেকে আপনার সম্পর্কে
+          নির্দিষ্ট প্রোফাইল তথ্য পাবো। আমরা যে প্রোফাইল তথ্য পাই তা সামাজিক
+          মিডিয়া প্রদানকারীর উপর নির্ভর করে ভিন্ন হতে পারে, তবে প্রায়শই আপনার
+          নাম, ইমেইল ঠিকানা, বন্ধুদের তালিকা, এবং প্রোফাইল ছবি, সেই সাথে আপনি এই
+          ধরনের সামাজিক মিডিয়া প্ল্যাটফর্মে প্রকাশ্যে করতে পছন্দ করা অন্যান্য
+          তথ্য অন্তর্ভুক্ত থাকে।
+        </p>
+  <p>আমরা যে তথ্য পাই তা কেবল এই গোপনীয়তা নোটিশে বর্ণিত উদ্দেশ্যে বা আমাদের পরিষেবাগুলিতে আপনার জন্য স্পষ্ট করা অন্যান্য উদ্দেশ্যে ব্যবহার করব। দয়া করে মনে রাখবেন যে আমরা আপনার তৃতীয় পক্ষের সামাজিক মিডিয়া প্রদানকারীর দ্বারা আপনার ব্যক্তিগত তথ্যের অন্যান্য ব্যবহার নিয়ন্ত্রণ করি না এবং তার জন্য দায়ী নই। আমরা আপনাকে তাদের গোপনীয়তা নোটিশ পর্যালোচনা করার পরামর্শ দিই যেন বুঝতে পারেন যে তারা কীভাবে আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার এবং শেয়ার করে এবং আপনি কীভাবে তাদের প্ল্যাটফর্মে আপনার গোপনীয়তা সেটিংস সামঞ্জস্য করতে পারেন।</p>
+  <h2 id="9-how-long-do-we-keep-your-information">৯. আমরা কতক্ষণ আপনার তথ্য রাখি?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>আমরা আইন দ্বারা প্রয়োজনীয় না হলে এই গোপনীয়তা নোটিশে বর্ণিত উদ্দেশ্য পূরণের জন্য প্রয়োজনীয় সময়ের জন্য আপনার তথ্য রাখি।</em></p>
+  <p>আমরা আপনার ব্যক্তিগত তথ্য শুধুমাত্র ততক্ষণ রাখব যতক্ষণ এই গোপনীয়তা নোটিশে বর্ণিত উদ্দেশ্যগুলি পূরণের জন্য প্রয়োজন, যদি না আইন দ্বারা দীর্ঘ সময় ধরে রাখা বা অনুমোদিত হয় (যেমন কর, হিসাবরক্ষণ বা অন্যান্য আইনি প্রয়োজনীয়তার জন্য)। এই নোটিশে কোনো উদ্দেশ্যের জন্য আমরা আপনার ব্যক্তিগত তথ্য আর প্রক্রিয়া করার প্রয়োজন না হলে, আমরা হয় তবে মুছে ফেলব বা নাম প্রকাশ না করে রাখে দেব, অথবা যদি এটি সম্ভব না হয় (উদাহরণস্বরূপ, কারণ আপনার ব্যক্তিগত তথ্য ব্যাকআপ আর্কাইভে সংরক্ষিত হয়েছে), তবে আমরা আপনার ব্যক্তিগত তথ্য নিরাপদে সংরক্ষণ করব এবং এটি মোছা সম্ভব না হওয়া পর্যন্ত আরো প্রক্রিয়াকরণ থেকে আইসোলেট করব।</p>
+  <h2 id="10-how-do-we-keep-your-information-safe">১০. আমরা কীভাবে আপনার তথ্য নিরাপদ রাখি?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>আমরা উপযুক্ত সাংগঠনিক এবং প্রযুক্তিগত নিরাপত্তা ব্যবস্থার মাধ্যমে আপনার ব্যক্তিগত তথ্য রক্ষা করার লক্ষ্যে।</em></p>
+  <p>আমরা আপনার ব্যক্তিগত তথ্যের নিরাপত্তা রক্ষার জন্য ডিজাইন করা উপযুক্ত এবং যুক্তিসঙ্গত প্রযুক্তিগত এবং সাংগঠনিক নিরাপত্তা ব্যবস্থা বাস্তবায়ন করেছি। তবে, আমাদের প্রচেষ্টা সত্ত্বে।ও, ইন্টারনেট বা তথ্য সংরক্ষণ প্রযুক্তির মাধ্যমে কোনো ইলেক্ট্রনিক সংক্রমণ ১০০% নিরাপদ হওয়ার নিশ্চয়তা দেওয়া যায় না, তাই আমরা গ্যারান্টি দিতে পারি না যে হ্যাকার, সাইবার অপরাধী, বা অন্যান্য অননুমোদিত তৃতীয় পক্ষ আমাদের নিরাপত্তা ব্যবস্থাকে পরাজিত করে আপনার তথ্য অপ্রকৃতভাবে সংগ্রহ, অ্যাক্সেস, চুরি বা পরিবর্তন করবে না। যদিও আমরা আপনার ব্যক্তিগত তথ্য রক্ষা করার জন্য যুক্তিসঙ্গত চেষ্টা করব, আমাদের পরিষেবাগুলি অ্যাক্সেস করতে বা থেকে তথ্য প্রেরণ আপনার নিজের ঝুঁকিতে। আপনার উচিত শুধুমাত্র নিরাপদ পরিবেশে আমাদের পরিষেবাগুলি অ্যাক্সেস করা।</p>
+  <h2 id="11-do-we-collect-information-from-minors">১১. আমরা কি নাবালকদের কাছ থেকে তথ্য সংগ্রহ করি?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>আমরা জেনেশুনে ১৮ বছরের কম বয়সী নাবালকদের কাছ থেকে তথ্য সংগ্রহ বা বাজারজাত করি না।</em></p>
+  <p>আমরা জেনেশুনে ১৮ বছরের কম বয়সী ব্যক্তিদের কাছ থেকে ব্যক্তিগত তথ্য সংগ্রহ করি না বা তাদের কাছে আমাদের পরিষেবাগুলি বাজারজাত করি না। আমাদের পরিষেবাগুলি ব্যবহার করে, আপনি প্রতিনিধিত্ব করেন যে আপনার বয়স কমপক্ষে ১৮ বছর বা আপনি এই ধরনের নাবালকের পিতামাতা বা অভিভাবক এবং আমাদের পরিষেবাগুলির এই ধরনের নাবালক নির্ভরশীলের ব্যবহারে সম্মত। যদি আমরা জানতে পারি যে ১৮ বছরের কম বয়সী ব্যবহারকারীদের ব্যক্তিগত তথ্য সংগৃহীত হয়েছে, তবে আমরা অ্যাকাউন্টটি নিষ্ক্রিয় করব এবং এই ধরনের তথ্য আমাদের রেকর্ড থেকে অবিলম্বে মুছে ফেলার জন্য যুক্তিসঙ্গত ব্যবস্থা নেব। আপনি যদি ১৮ বছরের কম বয়সী কোনো ব্যক্তির কাছ থেকে আমরা সংগ্রহ করা কোনো তথ্য সম্পর্কে জানতে পারেন, তবে দয়া করে আমাদের সাথে যোগাযোগ করুন <a href="mailto:contact@algoramming.com">contact@algoramming.com</a> এ।</p>
+  <h2 id="12-what-are-your-privacy-rights">১২. আপনার গোপনীয়তা অধিকারগুলি কী?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>কিছু অঞ্চলে, যেমন ইইএ, যুক্তরাজ্য এবং কানাডা, আপনার ব্যক্তিগত তথ্যে আরও অ্যাক্সেস এবং নিয়ন্ত্রণের অধিকার রয়েছে। আপনি যেকোনো সময় আপনার সম্মতি প্রত্যাহার করতে পারেন।</em></p>
+  <p>কিছু অঞ্চলে (যেমন ইউরোপীয় অর্থনৈতিক এলাকা, যুক্তরাজ্য এবং কানাডা), প্রযোজ্য ডেটা সুরক্ষা আইনের অধীনে আপনার নির্দিষ্ট অধিকার রয়েছে। এর মধ্যে নিম্নলিখিত অধিকারগুলি অন্তর্ভুক্ত থাকতে পারে:</p>
+  <ul>
+      <li>আপনার সম্পর্কে আমরা যে ব্যক্তিগত তথ্য প্রক্রিয়া করি তার কপি অনুরোধ করা;</li>
+      <li>আপনার সম্পর্কে আমাদের ধারণকৃত ব্যক্তিগত তথ্যের সংশোধন বা আপডেট করার অনুরোধ করা;</li>
+      <li>আপনার ব্যক্তিগত তথ্য মুছে ফেলার অনুরোধ করা;</li>
+      <li>আপনার ব্যক্তিগত তথ্য প্রক্রিয়াকরণে সীমাবদ্ধতা বা আপত্তি জানানো;</li>
+      <li>আপনার ব্যক্তিগত তথ্যের একটি বহনযোগ্য কপি অনুরোধ করা যা আপনি অন্য সংস্থার কাছে স্থানান্তর করতে পারেন; এবং</li>
+      <li>আপনার ব্যক্তিগত তথ্য প্রক্রিয়াকরণের জন্য আমাদের নির্ভর করা সম্মতি প্রত্যাহার করা।</li>
+  </ul>
+  <p>এই অধিকারগুলি পরম নয় এবং প্রযোজ্য ডেটা সুরক্ষা আইনের অধীনে নির্দিষ্ট শর্ত এবং ব্যতিক্রম সাপেক্ষে।</p>
+  <p>আপনি যদি ইউরোপীয় অর্থনৈতিক এলাকা বা যুক্তরাজ্যে থাকেন এবং আপনি বিশ্বাস করেন যে আমরা আপনার ব্যক্তিগত তথ্য অবৈধভাবে প্রক্রিয়া করছি, তবে আপনার স্থানীয় ডেটা সুরক্ষা তত্ত্বাবধায়ক কর্তৃপক্ষের কাছে অভিযোগ করার অধিকার রয়েছে। আপনি ইইএ ডেটা সুরক্ষা কর্তৃপক্ষের যোগাযোগের বিশদ এখানে পাবেন: <a href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</a>।</p>
+  <p>আপনি যদি সুইজারল্যান্ডে থাকেন, তবে ডেটা সুরক্ষা কর্তৃপক্ষের যোগাযোগের বিশদ এখানে পাওয়া যাবে: <a href="https://www.edoeb.admin.ch/edoeb/en/home.html">https://www.edoeb.admin.ch/edoeb/en/home.html</a>।</p>
+  <h3>সম্মতি প্রত্যাহার</h3>
+  <p>আপনি যদি ইইএ বা যুক্তরাজ্যে থাকেন এবং আপনি বিশ্বাস করেন যে আমরা আপনার সম্মতির ভিত্তিতে আপনার ব্যক্তিগত তথ্য প্রক্রিয়া করছি, তবে আপনি যেকোনো সময় আপনার সম্মতি প্রত্যাহার করতে পারেন। আপনি আমাদের সাথে যোগাযোগ করে এটি করতে পারেন <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>।</p>
+  <p>আপনার সম্মতি প্রত্যাহার করা প্রত্যাহারের আগে আমাদের প্রক্রিয়াকরণের বৈধতাকে প্রভাবিত করবে না, এবং এটি অন্যান্য আইনি ভিত্তিতে আমাদের প্রক্রিয়াকরণকে প্রভাবিত করবে না, যেমন চুক্তির পালন বা আইনি বাধ্যবাধকতা।</p>
+  <p>আপনার সম্মতি প্রত্যাহার করলে, আমরা নির্দিষ্ট পরিষেবাগুলি প্রদান করতে অক্ষম হতে পারি। এই ক্ষেত্রে, আমরা আপনাকে আপনার সম্মতি প্রত্যাহারের সময় অবহিত করব।</p>
+  <h3>অ্যাকাউন্ট তথ্য</h3>
+  <p>আপনি যেকোনো সময় আপনার অ্যাকাউন্টে থাকা তথ্য পর্যালোচনা বা পরিবর্তন করতে পারেন বা নিম্নলিখিতগুলি করে আপনার অ্যাকাউন্ট বন্ধ করতে পারেন:</p>
+  <ul>
+      <li>আপনার অ্যাকাউন্ট সেটিংসে লগইন করে এবং আপনার অ্যাকাউন্ট আপডেট করে</li>
+      <li>প্রদত্ত যোগাযোগের তথ্য ব্যবহার করে আমাদের সাথে যোগাযোগ করে</li>
+  </ul>
+  <p>আপনার অ্যাকাউন্ট বন্ধ করার অনুরোধে, আমরা আপনার অ্যাকাউন্ট এবং তথ্য আমাদের সক্রিয় ডাটাবেস থেকে নিষ্ক্রিয় বা মুছে ফেলব। তবে, আমরা জালিয়াতি প্রতিরোধ, সমস্যার সমাধান, তদন্তে সহায়তা, আমাদের ব্যবহারের শর্তাবলী প্রয়োগ বা প্রযোজ্য আইনি প্রয়োজনীয়তা মেনে চলার জন্য কিছু তথ্য আমাদের ফাইলে রাখতে পারি।</p>
+  <h2 id="13-controls-for-do-not-track-features">১৩. ডু-নট-ট্র্যাক বৈশিষ্ট্যের জন্য নিয়ন্ত্রণ</h2>
+  <p>বেশিরভাগ ওয়েব ব্রাউজার এবং কিছু মোবাইল অপারেটিং সিস্টেম এবং মোবাইল অ্যাপ্লিকেশনগুলি একটি ডু-নট-ট্র্যাক ("ডিএনটি") বৈশিষ্ট্য বা সেটিং অন্তর্ভুক্ত করে যা আপনি আপনার গোপনীয়তা পছন্দ নির্দেশ করতে সক্রিয় করতে পারেন যাতে আপনার অনলাইন ব্রাউজিং ক্রিয়াকলাপগুলি পর্যবেক্ষণ এবং সংগ্রহ না করা হয়। এই পর্যায়ে, কোনো অভিন্ন প্রযুক্তি মান ডিএনটি সংকেতগুলির জন্য চূড়ান্ত এবং বাস্তবায়িত হয়নি। ফলস্বরূপ, আমরা বর্তমানে ডিএনটি ব্রাউজার সংকেত বা অন্য কোনো প্রক্রিয়ার প্রতি সাড়া দিই না যা স্বয়ংক্রিয়ভাবে আপনার পছন্দকে অনলাইনে ট্র্যাক না করার জন্য নির্দেশ করে। যদি ভবিষ্যতে ডিএনটি-এর জন্য একটি মান গৃহীত হয় যা আমাদের অবশ্যই অনুসরণ করতে হবে, তবে আমরা এই গোপনীয়তা নোটিশের একটি আপডেট সংস্করণে সেই অনুশীলন সম্পর্কে আপনাকে অবহিত করব।</p>
+  <h2 id="14-do-united-states-residents-have-specific-privacy-rights">১৪. মার্কিন যুক্তরাষ্ট্রের বাসিন্দাদের কি নির্দিষ্ট গোপনীয়তা অধিকার আছে?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>হ্যাঁ, আপনি যদি মার্কিন যুক্তরাষ্ট্রের কিছু রাজ্যের বাসিন্দা হন, তবে আপনার ব্যক্তিগত তথ্য সম্পর্কে নির্দিষ্ট অধিকার প্রদান করা হয়।</em></p>
+  <p>আপনি যদি ক্যালিফোর্নিয়া, কলোরাডো, কানেকটিকাট, ডেলাওয়্যার, ফ্লোরিডা, ইন্ডিয়ানা, আইওয়া, মন্টানা, নিউ হ্যাম্পশায়ার, নিউ জার্সি, ওরেগন, টেনেসি, টেক্সাস, উটাহ, বা ভার্জিনিয়ার বাসিন্দা হন, তবে প্রযোজ্য রাজ্য ডেটা গোপনীয়তা আইনের অধীনে আপনার নির্দিষ্ট অধিকার থাকতে পারে। এই অধিকারগুলির মধ্যে নিম্নলিখিতগুলি অন্তর্ভুক্ত থাকতে পারে:</p>
+  <ul>
+      <li><strong>জানার অধিকার।</strong> আমরা আপনার সম্পর্কে যে ব্যক্তিগত তথ্য সংগ্রহ করেছি, ব্যবহার করেছি, প্রকাশ করেছি বা বিক্রি করেছি তা জানার অনুরোধ করতে।</li>
+      <li><strong>মুছে ফেলার অধিকার।</strong> আমাদের সংগ্রহ করা আপনার ব্যক্তিগত তথ্য মুছে ফেলার অনুরোধ করতে।</li>
+      <li><strong>সংশোধনের অধিকার।</strong> আমাদের ধারণকৃত আপনার ব্যক্তিগত তথ্যের সংশোধন বা আপডেট করার অনুরোধ করতে।</li>
+      <li><strong>অপ্ট-আউট করার অধিকার।</strong> আপনার ব্যক্তিগত তথ্যের বিক্রয় বা শেয়ারিং থেকে অপ্ট-আউট করতে, যার মধ্যে লক্ষ্যযুক্ত বিজ্ঞাপন অন্তর্ভুক্ত থাকতে পারে।</li>
+      <li><strong>অ-বৈষম্যের অধিকার।</strong> আপনার গোপনীয়তা অধিকার প্রয়োগের জন্য বৈষম্যমূলক আচরণ থেকে সুরক্ষিত থাকতে।</li>
+  </ul>
+  <h3>ক্যালিফোর্নিয়ার বাসিন্দারা</h3>
+  <p>ক্যালিফোর্নিয়া সিভিল কোড সেকশন ১৭৯৮.৮৩, যা "শাইন দ্য লাইট" আইন নামেও পরিচিত, আমাদের ক্যালিফোর্নিয়ার বাসিন্দা গ্রাহকদের অনুমতি দেয় যারা আমাদের সাথে ব্যবসায়িক সম্পর্ক স্থাপন করেছেন তাদের ব্যক্তিগত তথ্য তৃতীয় পক্ষের সাথে সরাসরি বিপণন উদ্দেশ্যে শেয়ার করার বিষয়ে তথ্য অনুরোধ করতে এবং প্রকাশ করতে। এই তথ্য অনুরোধ করতে, দয়া করে আমাদের সাথে যোগাযোগ করুন <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>।</p>
+  <p>ক্যালিফোর্নিয়া কনজ্যুমার প্রাইভেসি অ্যাক্ট (সিসিপিএ), যেমন ক্যালিফোর্নিয়া প্রাইভেসি রাইটস অ্যাক্ট (সিপিআরএ) দ্বারা সংশোধিত, ক্যালিফোর্নিয়ার বাসিন্দাদের তাদের ব্যক্তিগত তথ্য সম্পর্কে নির্দিষ্ট অধিকার প্রদান করে। আপনি যদি ক্যালিফোর্নিয়ার বাসিন্দা হন, তবে আপনি নিম্নলিখিত অধিকারগুলি প্রয়োগ করতে পারেন:</p>
+  <ul>
+      <li>আমরা আপনার সম্পর্কে যে ব্যক্তিগত তথ্য সংগ্রহ করেছি তার বিভাগ এবং নির্দিষ্ট টুকরো জানার অধিকার;</li>
+      <li>আমরা আপনার ব্যক্তিগত তথ্য যে উদ্দেশ্যে ব্যবহার করেছি বা প্রকাশ করেছি তা জানার অধিকার;</li>
+      <li>আপনার ব্যক্তিগত তথ্য মুছে ফেলার অনুরোধ করার অধিকার;</li>
+      <li>আপনার ব্যক্তিগত তথ্যের সংশোধনের অনুরোধ করার অধিকার;</li>
+      <li>আপনার ব্যক্তিগত তথ্যের বিক্রয় বা লক্ষ্যযুক্ত বিজ্ঞাপনের জন্য শেয়ারিং থেকে অপ্ট-আউট করার অধিকার; এবং</li>
+      <li>এই অধিকারগুলি প্রয়োগের জন্য বৈষম্য থেকে সুরক্ষিত থাকার অধিকার।</li>
+  </ul>
+  <p>আমরা ব্যক্তিগত তথ্য বিক্রি করি না, তবে আমরা লক্ষ্যযুক্ত বিজ্ঞাপনের জন্য তথ্য শেয়ার করতে পারি, যা সিপিআরএ-এর অধীনে "শেয়ারিং" হিসেবে বিবেচিত হতে পারে। আপনি আমাদের ওয়েবসাইটে আমাদের কুকি সেটিংসে বা নিম্নে প্রদত্ত যোগাযোগের বিশদ ব্যবহার করে এই শেয়ারিং থেকে অপ্ট-আউট করতে পারেন।</p>
+  <p>আপনার সিসিপিএ অধিকার প্রয়োগ করতে, দয়া করে আমাদের সাথে যোগাযোগ করুন <a href="mailto:contact@algoramming.com">contact@algoramming.com</a>। আমরা প্রযোজ্য আইন অনুসারে আপনার অনুরোধ যাচাই করব এবং সাড়া দেব।</p>
+  <h2 id="15-do-other-regions-have-specific-privacy-rights">১৫. অন্যান্য অঞ্চলের কি নির্দিষ্ট গোপনীয়তা অধিকার আছে?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>আপনার অবস্থানের উপর নির্ভর করে আপনার অতিরিক্ত গোপনীয়তা অধিকার থাকতে পারে।</em></p>
+  <p><h3>অস্ট্রেলিয়া</h3></p>
+  <p>অস্ট্রেলিয়ার বাসিন্দাদের জন্য, অস্ট্রেলিয়ান প্রাইভেসি প্রিন্সিপলস (APPs) এবং প্রাইভেসি অ্যাক্ট ১৯৮৮-এর অধীনে আপনার ব্যক্তিগত তথ্য সম্পর্কে নির্দিষ্ট অধিকার রয়েছে। এর মধ্যে নিম্নলিখিত অধিকারগুলি অন্তর্ভুক্ত থাকতে পারে:</p>
+  <ul>
+      <li>আপনার সম্পর্কে আমরা যে ব্যক্তিগত তথ্য ধারণ করি তাতে অ্যাক্সেস করার অধিকার;</li>
+      <li>আপনার ব্যক্তিগত তথ্য সংশোধনের অনুরোধ করার অধিকার;</li>
+      <li>অজ্ঞাতনামা বা ছদ্মনামে লেনদেন করার অধিকার, যেখানে এটি ব্যবহারিক;</li>
+      <li>সরাসরি বিপণন যোগাযোগ থেকে অপ্ট-আউট করার অধিকার; এবং</li>
+      <li>আপনার ব্যক্তিগত তথ্যের পরিচালনার বিষয়ে অভিযোগ করার অধিকার।</li>
+  </ul>
+  <p>আপনি যদি অস্ট্রেলিয়ায় থাকেন এবং আমরা আপনার ব্যক্তিগত তথ্য কীভাবে পরিচালনা করছি তা নিয়ে উদ্বিগ্ন হন, তবে আপনি অফিস অফ দ্য অস্ট্রেলিয়ান ইনফরমেশন কমিশনার (OAIC) এর কাছে অভিযোগ করতে পারেন। যোগাযোগের বিশদ এখানে পাওয়া যাবে: <a href="https://www.oaic.gov.au/">https://www.oaic.gov.au/</a>।</p>
+  <p>আপনার অধিকার প্রয়োগ করতে বা আরও তথ্যের জন্য, দয়া করে আমাদের সাথা যোগাযোগ করুন <a href="mailto:mailto:contact@algoramming.com">contact@algoramming.com</a>।</p>
+  <h2 id="16-do-we-make-updates-to-this-notice">১৬. আমরা কি এই নোটিশ আপডেট করি?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>হ্যাঁ, আমরা প্রযোজ্য আইন মেনে চলতে এই গোপনীয়তা নোটিশ আপডেট করব।</em>
+  <p>আমরা সময়ে সময়ে এই গোপনীয়তা নোটিশ আপডেড করতে পারি। আপডেট করা সংস্করণ একটি আপডেটেড "সর্বশেষ আপডেট" তারিখ দিয়ে নির্দশ করা হবে এবং আপডেটেড সংস্করণটি উপলভ্য হওয়ার সাথে সাথে কার্যকর হবে। যদি আমরা এই গোপনীয়তা নোটিশে উল্লেখযোগ্য পরিবর্তন করি, তবে আমরা আপনাকে হয় স্পষ্টভাবে এই ধরনের পরিবর্তনের বিজ্ঞপ্তি পাঠিয়ে বা আমাদের পরিষেবাগুলিতে একটি একটি বিজ্ঞপ্তি প্রকাশ করে অবহিত করৱ। আমরা আপনাকে নিয়মিতভাবে এই গোপনীয়তা নোটিশ পর্যম পঠার পরামর্শ দি, যেন আপন আমরা আপকথ্য কীভাবে রক্ষণ করি তা সম্পর্কে।</p>
+  <h2 id="17-how-can-you-contact-us-about-this-notice">১৭. এই নোটিশ সম্পর্কে আপন কীভাবে আমাদের সাথে যোগাযোগ করতে পারেন?</h2>
+  <p>এই গোপনীয়তা নোটিশ সম্পর্কে আপনার প্রশ্ন বা মন্তব্য থাকলে, আপনি আমাদের সাথে যোগাযোগ করতে পারেন:</p>
+  <ul>
+    <li>ইমেইলের মাধ্যমে: <a href="mailto:contact@algoramming.com">contact@algoramming.com</a></li>
+  </ul>
+  <p>আপনি আমাদের ডাটা প্রোটেকশন অফিসারের (ডিপিও) সাথেও যোগাযোগ করতে পারেন:</p>
+  <ul>
+    <li>ইমেল: <a href="mailto:contact@algoramming.com">contact@algoramming.com</a></li>
+  </ul>
+  <h2 id="18-how-can-you-review-update-or-delete-the-data-we-collect-from-you">১৮. আপনি কীভাবে আমাদের সংগৃহীত তথ্য পর্যালোচনা, আপডেট বা মুছে ফেলতে পারেন?</h2>
+  <p><strong>সংক্ষেপে:</strong> <em>আপনি আপনার অ্যাকাউন্ট সেটিংসে লগইন করে বা আমাদের সাথে যোগাযোগ করে আপনার তথ্য পর্যালোচনা, আপডেট বা মুছে ফেলতে পারেন।</em></p>
+  <p>আপনার অবস্থানে প্রযোজ্য ডেটা সুরক্ষা আইনের উপর নির্ভর করে, আপনি আপনার সম্পর্কে আমরা যে ব্যক্তিগত তথ্য সংগ্রহ করেছি তাতে অ্যাক্সেসের অনুরোধ করতে পারেন, এটি পরিবর্তন করতে পারেন, বা এটি মুছে ফেলার অনুরোধ করতে পারেন। আপনার ব্যক্তিগত তথ্য পর্যালোচনা, আপডেট বা মুছে ফেলতে, দয়া করে একটি ডেটা সাবজেক্ট অ্যাক্সেস অনুরোধ জমা দিন:</p>
+  <ul>
+      <li>ইমেইলের মাধ্যমে: <a href="mailto:contact@algoramming.com">contact@algoramming.com</a></li>
+      <li>আমাদের ডাটা প্রোটেকশন অফিসারের কাছে: <a href="mailto:contact@algoramming.com">contact@algoramming.com</a></li>
+  </ul>
+  <p>আমরা প্রযোজ্য ডেটা সুরক্ষা আইন অনুসারে আপনার অনুরোধ যাচাই করব এবং সাড়া দেব।</p>
+  <p><em>দ্রষ্টব্য: এই গোপনীয়তা নোটিশের বাংলা অংশটি মূল ইংরেজি সংস্করণের একটি স্থানীয় অনুবাদ। কোনো অসঙ্গতির ক্ষেত্রে, ইংরেজি সংস্করণ প্রাধান্য পাবে। নির্ভুলতার জন্য, আমরা একজন পেশাদার অনুবাদকের সাথে পরামর্শ করার পরামর্শ দিই।</em></p>
 
-    </div>
+</div>
+</div>
+  <!-- JavaScript for Language Toggle -->
+  <script>
+      document.getElementById('languageToggle').addEventListener('click', function() {
+          const englishContent = document.getElementById('englishContent');
+          const banglaContent = document.getElementById('banglaContent');
+          const button = this;
+
+          if (englishContent.style.display === 'none') {
+              englishContent.style.display = 'block';
+              banglaContent.style.display = 'none';
+              button.textContent = 'বাংলায় দেখুন';
+          } else {
+              englishContent.style.display = 'none';
+              banglaContent.style.display = 'block';
+              button.textContent = 'View in English';
+          }
+      });
+
+      // Initialize with English content visible
+      document.getElementById('englishContent').style.display = 'block';
+      document.getElementById('banglaContent').style.display = 'none';
+  </script>
+  
 </body>
+</html>
