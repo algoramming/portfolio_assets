@@ -14,7 +14,7 @@
         color: #333;
       }
       .container {
-        max-width: 800px;
+        max-width: 1024px;
         margin: 0 auto;
         background: #fff;
         padding: 20px;
@@ -127,6 +127,45 @@
     </style>
   </head>
   <body>
+
+    <!-- JavaScript for Language Toggle -->
+    
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const englishContent = document.getElementById('englishContent');
+        const banglaContent = document.getElementById('banglaContent');
+        const toggleButton = document.getElementById('languageToggle');
+        const languageButton = document.getElementById('languageButton');
+    
+        function updateLanguageView(isBangla) {
+          if (isBangla) {
+            englishContent.style.display = 'none';
+            banglaContent.style.display = 'block';
+            languageButton.textContent = 'View in English';
+            toggleButton.checked = true;
+          } else {
+            englishContent.style.display = 'block';
+            banglaContent.style.display = 'none';
+            languageButton.textContent = 'বাংলায় দেখুন';
+            toggleButton.checked = false;
+          }
+        }
+    
+        // Set initial state
+        updateLanguageView(false);
+    
+        // Handle toggle switch
+        toggleButton.addEventListener('change', function () {
+          updateLanguageView(toggleButton.checked);
+        });
+    
+        // Handle button click
+        languageButton.addEventListener('click', function () {
+          updateLanguageView(banglaContent.style.display === 'none');
+        });
+      });
+    </script>
     <div class="container">
       <div class="header">
         <h1>Privacy Policy</h1>
@@ -1707,7 +1746,6 @@
       </div>
 
       <!-- Bangla Content -->
-      <!-- Continuing from the previous Bangla content section -->
       <div id="banglaContent" class="content">
         <!-- Previous content up to the cutoff point -->
         <p><strong>সর্বশেষ আপডেট: জুন ০১, ২০২১</strong></p>
@@ -2703,46 +2741,5 @@
         বাংলায় দেখুন
       </button>
     </div>
-
-    <!-- JavaScript for Language Toggle -->
-    
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const englishContent = document.getElementById('englishContent');
-        const banglaContent = document.getElementById('banglaContent');
-        const toggleButton = document.getElementById('languageToggle');
-        const languageButton = document.getElementById('languageButton');
-    
-        function updateLanguageView(isBangla) {
-          if (isBangla) {
-            englishContent.style.display = 'none';
-            banglaContent.style.display = 'block';
-            languageButton.textContent = 'View in English';
-            toggleButton.checked = true;
-          } else {
-            englishContent.style.display = 'block';
-            banglaContent.style.display = 'none';
-            languageButton.textContent = 'বাংলায় দেখুন';
-            toggleButton.checked = false;
-          }
-        }
-    
-        // Set initial state
-        updateLanguageView(false);
-    
-        // Handle toggle switch
-        toggleButton.addEventListener('change', function () {
-          updateLanguageView(toggleButton.checked);
-        });
-    
-        // Handle button click
-        languageButton.addEventListener('click', function () {
-          updateLanguageView(banglaContent.style.display === 'none');
-        });
-      });
-    </script>
-    
-  
 </body>
 </html>
