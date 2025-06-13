@@ -131,41 +131,6 @@
     <!-- JavaScript for Language Toggle -->
     
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const englishContent = document.getElementById('englishContent');
-        const banglaContent = document.getElementById('banglaContent');
-        const toggleButton = document.getElementById('languageToggle');
-        const languageButton = document.getElementById('languageButton');
-    
-        function updateLanguageView(isBangla) {
-          if (isBangla) {
-            englishContent.style.display = 'none';
-            banglaContent.style.display = 'block';
-            languageButton.textContent = 'View in English';
-            toggleButton.checked = true;
-          } else {
-            englishContent.style.display = 'block';
-            banglaContent.style.display = 'none';
-            languageButton.textContent = 'বাংলায় দেখুন';
-            toggleButton.checked = false;
-          }
-        }
-    
-        // Set initial state
-        updateLanguageView(false);
-    
-        // Handle toggle switch
-        toggleButton.addEventListener('change', function () {
-          updateLanguageView(toggleButton.checked);
-        });
-    
-        // Handle button click
-        languageButton.addEventListener('click', function () {
-          updateLanguageView(banglaContent.style.display === 'none');
-        });
-      });
-    </script>
     <div class="container">
       <div class="header">
         <h1>Privacy Policy</h1>
@@ -2740,6 +2705,44 @@
       <button id="languageButton" style="background-color: #5DC095; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin: 20px auto; display: block;">
         বাংলায় দেখুন
       </button>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const englishContent = document.getElementById('englishContent');
+          const banglaContent = document.getElementById('banglaContent');
+          const toggleButton = document.getElementById('languageToggle');
+          const languageButton = document.getElementById('languageButton');
+      
+          function updateLanguageView(isBangla) {
+            if (isBangla) {
+              englishContent.style.display = 'none';
+              banglaContent.style.display = 'block';
+              languageButton.textContent = 'View in English';
+              toggleButton.checked = true;
+            } else {
+              englishContent.style.display = 'block';
+              banglaContent.style.display = 'none';
+              languageButton.textContent = 'বাংলায় দেখুন';
+              toggleButton.checked = false;
+            }
+          }
+      
+          // Set initial state
+          updateLanguageView(false);
+      
+          // Handle toggle switch
+          toggleButton.addEventListener('change', function () {
+            updateLanguageView(toggleButton.checked);
+          });
+      
+          // Handle button click
+          languageButton.addEventListener('click', function () {
+            updateLanguageView(banglaContent.style.display === 'none');
+          });
+        });
+      </script>
+
     </div>
 </body>
 </html>
