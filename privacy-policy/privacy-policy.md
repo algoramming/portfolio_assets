@@ -13,7 +13,7 @@ This Privacy Notice for Algoramming ("**we**," "**us**," or "**our**"), describe
 
 ### Questions or concerns?
 
-Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at [contact@algoramming.com](mailto:contact@algoramming.com).
+Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at [support@algoramming.com](mailto:support@algoramming.com).
 
 ---
 
@@ -412,7 +412,7 @@ Although we will do our best to protect your personal information, transmission 
 
 We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services.
 
-If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at [contact@algoramming.com](mailto:contact@algoramming.com).
+If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at [support@algoramming.com](mailto:support@algoramming.com).
 
 ---
 
@@ -468,7 +468,7 @@ Upon your request to terminate your account, we will deactivate or delete your a
 
 Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services. You may also [opt out of interest-based advertising by advertisers](#) on our Services.
 
-If you have questions or comments about your privacy rights, you may email us at [contact@algoramming.com](mailto:contact@algoramming.com).
+If you have questions or comments about your privacy rights, you may email us at [support@algoramming.com](mailto:support@algoramming.com).
 
 ---
 
@@ -562,7 +562,7 @@ Depending upon the state where you live, you may also have the following rights:
 
 ### How to Exercise Your Rights
 
-To exercise these rights, you can contact us by submitting a [data subject access request](#), by emailing us at [contact@algoramming.com](mailto:contact@algoramming.com), or by referring to the contact details at the bottom of this document.
+To exercise these rights, you can contact us by submitting a [data subject access request](#), by emailing us at [support@algoramming.com](mailto:support@algoramming.com), or by referring to the contact details at the bottom of this document.
 
 We will honor your opt-out preferences if you enact the [Global Privacy Control (GPC)](#) opt-out signal on your browser.
 
@@ -582,7 +582,7 @@ If you submit the request through an authorized agent, we may need to collect ad
 
 ### Appeals
 
-Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at [contact@algoramming.com](mailto:contact@algoramming.com). We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
+Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at [support@algoramming.com](mailto:support@algoramming.com). We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.
 
 ---
 
@@ -640,7 +640,7 @@ We may update this Privacy Notice from time to time. The updated version will be
 
 ## 17. How Can You Contact Us About This Notice?
 
-If you have questions or comments about this notice, you may email us at [contact@algoramming.com](mailto:contact@algoramming.com) or contact us by post at:
+If you have questions or comments about this notice, you may email us at [support@algoramming.com](mailto:support@algoramming.com) or contact us by post at:
 
 **Algoramming**  
 House #12, Road #02, DAG #1677, Anandanagar, Dhaka-1212  

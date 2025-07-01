@@ -18,7 +18,7 @@ Whether you're a startup looking for end-to-end tech solutions or an IT firm in 
 
 You can contact us by:
 - **Phone**: (+880)1400629698
-- **Email**: [contact@algoramming.com](mailto:contact@algoramming.com)
+- **Email**: [support@algoramming.com](mailto:support@algoramming.com)
 - **Mail**: House #12, Road #02, DAG #1677, Anandanagar, Dhaka, Dhaka 1212, Bangladesh.
 
 ---
@@ -107,7 +107,7 @@ This is solely for your **personal, non-commercial use or internal business purp
 Except as set out in this section or elsewhere in our **Legal Terms**, **no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.**
 
 If you wish to make any use of the **Services, Content, or Marks** other than as set out in this section or elsewhere in our **Legal Terms**, please address your request to:  
-📩 [contact@algoramming.com](mailto:contact@algoramming.com)  
+📩 [support@algoramming.com](mailto:support@algoramming.com)  
 
 If we ever grant you the **permission** to **post, reproduce, or publicly display** any part of our **Services** or **Content**, you **must identify us as the owners or licensors** of the **Services, Content, or Marks** and ensure that **any copyright or proprietary notice** appears or is visible when posting, reproducing, or displaying our **Content**.
 
@@ -275,7 +275,7 @@ You can **cancel your subscription at any time** by logging into your **account*
 Your **cancellation** will **take effect at the end of the current paid term**.  
 
 If you have any **questions** or are **unsatisfied with our Services**,  
-please email us at 📩 [contact@algoramming.com](mailto:contact@algoramming.com).
+please email us at 📩 [support@algoramming.com](mailto:support@algoramming.com).
 
 ---
 
@@ -864,7 +864,7 @@ Visiting the **Services**, sending us **emails**, and completing **online forms*
 ---
 
 ## **Support**
-📩 **Email**: [contact@algoramming.com](mailto:contact@algoramming.com)  
+📩 **Email**: [support@algoramming.com](mailto:support@algoramming.com)  
 📞 **Phone**: (+880) 1400629698
 
 # 27. MISCELLANEOUS
@@ -907,4 +907,4 @@ please contact us at:
 **Dhaka, Dhaka 1212, Bangladesh**  
 
 📞 **Phone**: (+880) 1400629698  
-📩 **Email**: [contact@algoramming.com](mailto:contact@algoramming.com)
+📩 **Email**: [support@algoramming.com](mailto:support@algoramming.com)
